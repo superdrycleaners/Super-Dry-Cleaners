@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getContent, getContentSection } from '@/lib/data/content';
 import Reveal from '@/components/site/Reveal';
 import Marquee from '@/components/site/Marquee';
@@ -9,6 +10,7 @@ import WhyChooseUs from '@/components/site/WhyChooseUs';
 import AreasServed from '@/components/site/AreasServed';
 import Testimonial from '@/components/site/Testimonial';
 import BookingForm from '@/components/site/BookingForm';
+import OurProcess from '@/components/site/OurProcess';
 
 /**
  * Single-page layout: all content on one scrolling page with anchor sections.
@@ -69,8 +71,11 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Our Eco-Friendly Process */}
+      <OurProcess />
+
       {/* Services */}
-      <section className="section section--muted" id="services">
+      <section className="section" id="services">
         <div className="container">
           <Reveal as="header" className="section__head section__head--center">
             <p className="eyebrow">{home.servicesEyebrow || 'Our services'}</p>
@@ -85,17 +90,18 @@ export default async function HomePage() {
 
       {/* Pricing / Catalogue */}
       <section className="section" id="pricing">
-        <div className="container">
-          <Reveal as="header" className="section__head section__head--center">
+        <div className="container" style={{ textAlign: 'center' }}>
+          <Reveal as="header" className="section__head section__head--center" style={{ marginBottom: '2rem' }}>
             <p className="eyebrow">{home.pricingEyebrow || 'Pricing'}</p>
             <h2 className="section__title">{home.pricingTitle || 'Every item, every price.'}</h2>
             <p className="section__intro">
               {home.pricingIntro || 'Transparent, itemised pricing. Free collection & delivery on orders over £25.'}
             </p>
           </Reveal>
-          <Catalogue groups={pricingGroups} />
-          <Reveal as="p" className="cat__foot">
-            {home.pricingFooter || 'Need something not listed?'} <a href="#book">Ask us for a quote →</a>
+          <Reveal>
+            <Link href="/pricing" className="btn btn--solid" style={{ display: 'inline-block', fontSize: '1.1rem', padding: '1.2rem 2.5rem', borderRadius: '100px' }}>
+              Explore our Catalogue/Pricing
+            </Link>
           </Reveal>
         </div>
       </section>
