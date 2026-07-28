@@ -22,8 +22,8 @@ const SpecialOffers = ({ offers }) => (
       <div className="offers__grid">
         {offers.map((offer) => (
           <Reveal className="offers__card" key={offer.name}>
-            <span className="offers__price">{offer.price}</span>
             <h3>{offer.name}</h3>
+            <span className="offers__price">{offer.price}</span>
             {offer.sub && <p>{offer.sub}</p>}
           </Reveal>
         ))}

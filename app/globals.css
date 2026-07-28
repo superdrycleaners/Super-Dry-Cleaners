@@ -156,6 +156,23 @@ ol {
   transform: none;
 }
 
+.btn--large {
+  font-size: 1.1rem;
+  padding: 1.2rem 2.5rem;
+  white-space: normal;
+  text-align: center;
+  height: auto;
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .btn--large {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+  }
+}
+
 /* ---------- Navigation ---------- */
 .nav {
   position: fixed;
@@ -1407,13 +1424,13 @@ ol {
   font-size: 2.4rem;
   font-weight: 600;
   margin-bottom: 0.6rem;
+  color: var(--brass);
 }
 .offers__card h3 {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 500;
   margin-bottom: 0.3rem;
-  color: var(--brass);
 }
 .offers__card p {
   color: rgba(244, 246, 251, 0.65);

@@ -99,7 +99,7 @@ export default async function HomePage() {
             </p>
           </Reveal>
           <Reveal>
-            <Link href="/pricing" className="btn btn--solid" style={{ display: 'inline-block', fontSize: '1.1rem', padding: '1.2rem 2.5rem', borderRadius: '100px' }}>
+            <Link href="/pricing" className="btn btn--solid btn--large">
               Explore our Catalogue/Pricing
             </Link>
           </Reveal>
