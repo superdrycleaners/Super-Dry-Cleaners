@@ -1,0 +1,147 @@
+{
+  "brand": {
+    "name": "Super Dry Cleaners",
+    "email": "info@superdrycleaners.co",
+    "phone": "07889 693265",
+    "phoneHref": "+447889693265",
+    "phoneLandline": "0116 123 4567",
+    "whatsapp": "447889693265",
+    "website": "superdrycleaners.co",
+    "address": "Unit 4, Patel Lane, Leicester LE1 4EY",
+    "tagline": "Leicester's premium dry cleaning & laundry service since 2005.",
+    "footerText": "We care for your clothes like they're our own.",
+    "copyright": "All rights reserved.",
+    "openingHours": "Monday – Saturday, 9:00am – 6:00pm",
+    "closedDay": "Sunday: Closed",
+    "freeDeliveryThreshold": "£25",
+    "areasServed": "Leicester City Centre · Clarendon Park · Oadby · Knighton · Evington · Stoneygate · Highfields · Braunstone · Glenfield · Beaumont Leys · Belgrave · Wigston · and more"
+  },
+  "home": {
+    "eyebrow": "Since 2005 · Free collection & delivery on orders over £25",
+    "title": "Fresh. Clean. Perfect every time.",
+    "lede": "Super Dry Cleaners is Leicester's premium laundry and dry cleaning service. Professional care for your clothes, bedding and more — collected from your door, returned immaculate.",
+    "ctaBooking": "Book Collection",
+    "ctaPricing": "View Pricing",
+    "ctaWhatsapp": "WhatsApp Us",
+    "processEyebrow": "How it works",
+    "processTitle": "Laundry made effortless.",
+    "processIntro": "Four simple steps. No queues, no carrying — just clean clothes returned to your door.",
+    "servicesEyebrow": "Our services",
+    "servicesTitle": "Everything your wardrobe needs.",
+    "servicesIntro": "From everyday laundry to specialist cleaning — we handle it all with care.",
+    "pricingEyebrow": "Pricing",
+    "pricingTitle": "Every item, every price.",
+    "pricingIntro": "Transparent, itemised pricing. Free collection & delivery on orders over £25.",
+    "pricingFooter": "Need something not listed?",
+    "bookingEyebrow": "Book a collection",
+    "bookingTitle": "Let's take it from here.",
+    "bookingIntro": "Tell us where and when. Drop a pin for the exact pickup spot — we'll confirm within the hour.",
+    "stats": [
+      { "value": "20+", "label": "Years of experience" },
+      { "value": "6 days", "label": "Open Mon–Sat" },
+      { "value": "4.9★", "label": "Customer rated" }
+    ]
+  },
+  "steps": [
+    { "title": "Schedule", "body": "Book a collection online, via WhatsApp, or give us a call. Same-day slots available across Leicester and surrounding areas." },
+    { "title": "We collect", "body": "Our van arrives at your door. Hand over your garments in anything — we supply the rest. Free on orders over £25." },
+    { "title": "We care", "body": "Every item is inspected and treated using the latest machines and professional detergents at our Leicester facility." },
+    { "title": "We return", "body": "Freshly cleaned, pressed and wrapped — delivered back at a time that suits you. Fast, reliable and hassle free." }
+  ],
+  "services": [
+    { "num": "01", "title": "Dry Cleaning", "body": "Gentle care for suits, dresses, coats and more. Every item is inspected, pre-treated and finished by hand." },
+    { "num": "02", "title": "Wash, Dry & Fold", "body": "Everyday laundry service for everyday clothes. Washed, dried, folded and ready to wear." },
+    { "num": "03", "title": "Ironing & Pressing", "body": "Perfectly pressed ironing service, ready to wear. Crisp shirts, sharp trousers, every time." },
+    { "num": "04", "title": "Duvets & Bedding", "body": "Deep clean for duvets, pillows and bedding. Fresh sheets without the hassle." },
+    { "num": "05", "title": "Curtains & Household Items", "body": "We clean curtains with care and precision, plus tablecloths, towels and other household textiles." },
+    { "num": "06", "title": "Wedding Dress Cleaning", "body": "Specialist cleaning to keep your memories perfect. Preserved and boxed with care." },
+    { "num": "07", "title": "Alterations & Repairs", "body": "Expert alterations for the perfect fit. Hems, resizing and small repairs handled in-house." },
+    { "num": "08", "title": "Commercial Laundry", "body": "Hotels, restaurants, Airbnb, spas, salons and more. Reliable high-volume care billed by the kilo." },
+    { "num": "09", "title": "Bag & Shoe Cleaning", "body": "Professional care for your bags and shoes. Restored and refreshed." }
+  ],
+  "catalogue": [
+    {
+      "id": "dry",
+      "title": "Dry Cleaning",
+      "note": "Per item · hand finished",
+      "items": [
+        { "name": "Shirt", "price": "£5" },
+        { "name": "Trousers", "price": "£8" },
+        { "name": "Skirt", "price": "£8" },
+        { "name": "Jacket", "price": "£10" },
+        { "name": "2-Piece Suit", "price": "£18" },
+        { "name": "3-Piece Suit", "price": "£22" },
+        { "name": "Short Coat", "price": "£15" },
+        { "name": "Long Coat", "price": "£18" },
+        { "name": "Dress", "price": "From £12" }
+      ]
+    },
+    {
+      "id": "laundry",
+      "title": "Laundry & Bedding",
+      "note": "Wash, dry & fold · household",
+      "items": [
+        { "name": "Bed Set — Single", "price": "£15" },
+        { "name": "Bed Set — Double", "price": "£20" },
+        { "name": "Poly Duvet Cleaning", "price": "£15" },
+        { "name": "5kg Family Bundle", "sub": "Wash, dry & fold", "price": "£22" },
+        { "name": "10kg Family Bundle", "sub": "Wash, dry & fold", "price": "£40" },
+        { "name": "Weekly Subscription", "sub": "Up to 4kg · collection & delivery included", "price": "£18", "priceSuffix": "/wk", "feature": true }
+      ]
+    },
+    {
+      "id": "commercial",
+      "title": "Commercial Laundry",
+      "note": "Trade accounts · billed by the kilo",
+      "wide": true,
+      "items": [
+        { "name": "Restaurant Linen", "price": "From £3.50", "priceSuffix": "/kg" },
+        { "name": "Beauty Salon Towels", "price": "From £3.00", "priceSuffix": "/kg" },
+        { "name": "Airbnb Bedding", "price": "From £15", "priceSuffix": "/change" },
+        { "name": "Hotel Linen", "price": "On request" }
+      ]
+    },
+    {
+      "id": "offers",
+      "title": "Special Offers",
+      "note": "Limited time deals",
+      "wide": true,
+      "items": [
+        { "name": "3 Garments Dry Cleaned", "price": "£18", "feature": true },
+        { "name": "25% Off Curtain Cleaning", "price": "25% off" },
+        { "name": "20% Off First Order", "sub": "Use code SUPER20", "price": "20% off", "feature": true }
+      ]
+    }
+  ],
+  "about": {
+    "title": "We care for your clothes like they're our own.",
+    "intro": "Super Dry Cleaners has proudly served Leicester and surrounding areas since 2005. We combine the latest machines with professional detergents to deliver premium quality at affordable prices.",
+    "story": [
+      "Super Dry Cleaners began with a simple idea: professional garment care shouldn't be complicated or expensive. Since 2005, we've grown into Leicester's trusted choice for dry cleaning, laundry and specialist cleaning — serving homes and businesses alike.",
+      "Today we handle everything from everyday wash-and-fold to wedding dress preservation and commercial linen. Our team pays attention to detail, uses eco-friendly products wherever possible, and treats every item as if it were our own."
+    ],
+    "features": [
+      { "title": "Free collection & delivery", "body": "Complimentary pickup and return on all orders over £25, across Leicester and surrounding areas." },
+      { "title": "Eco-friendly products", "body": "We use environmentally responsible detergents and processes that protect fabric and planet alike." },
+      { "title": "Satisfaction guaranteed", "body": "If you're not happy, we'll re-clean it for free. No questions asked." },
+      { "title": "Latest machines", "body": "Professional-grade equipment and detergents for premium quality results every time." }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "Fast, reliable and hassle free. My clothes always come back perfect and the collection service is so convenient. Wouldn't go anywhere else.",
+      "author": "Happy Customer",
+      "location": "Leicester"
+    },
+    {
+      "quote": "Brilliant service from start to finish. They collected my suits and returned them looking brand new. The weekly subscription is a game-changer.",
+      "author": "Business Professional",
+      "location": "Oadby"
+    },
+    {
+      "quote": "I've used Super Dry Cleaners for my wedding dress and was blown away by the care they took. Highly recommend to anyone in Leicester.",
+      "author": "Satisfied Bride",
+      "location": "Knighton"
+    }
+  ]
+}

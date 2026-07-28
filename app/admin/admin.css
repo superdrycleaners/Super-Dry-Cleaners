@@ -1,0 +1,162 @@
+/* =========================================================
+   Belgravia & Co. — Admin dashboard + CMS styles
+   Shares the site palette; denser, utility-focused layout.
+
+   Selectors below are retained because their consumers still
+   reference the classes. Migrated selectors (panel, pill,
+   status-select, table__wrap, .stat card, detail, cms__field)
+   have been removed — primitives in admin-ui.css now own them.
+   ========================================================= */
+
+.admin { min-height: 100vh; display: flex; flex-direction: column; background: var(--mist); }
+
+/* Top navigation bar */
+.admin__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 2rem;
+  background: #ffffff;
+  color: var(--ink, #1a1f2e);
+  border-bottom: 1px solid var(--line, #dce3ef);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.admin__topbar-logo { height: 36px; width: auto; }
+.admin__topbar-right { display: flex; align-items: center; gap: 1.5rem; }
+
+/* Legacy sidebar — kept for reference, no longer rendered */
+.admin__sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background: var(--dark);
+  color: var(--mist);
+  padding: 1.8rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.admin__brand { display: flex; align-items: center; gap: 0.6rem; color: #fff; }
+.admin__brand-logo { width: 100%; max-width: 180px; height: auto; display: block; }
+.admin__nav { display: flex; flex-direction: row; gap: 0.3rem; }
+.admin__foot { margin-top: auto; display: flex; flex-direction: column; gap: 0.8rem; }
+.admin__user { font-size: 0.8rem; color: var(--ink-soft, #6b7280); }
+
+/* Main area */
+.admin__main { flex: 1; padding: 2.2rem 2.4rem; overflow-x: hidden; }
+.admin__header { margin-bottom: 2rem; }
+.admin__header h1 { font-family: var(--font-display); font-size: 2.1rem; font-weight: 500; }
+.admin__header p { color: var(--ink-soft); font-size: 0.95rem; margin-top: 0.2rem; }
+
+/* Stat cards */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 2.2rem; }
+.stat__value { font-family: var(--font-display); font-size: 2.2rem; font-weight: 600; color: var(--teal); line-height: 1; }
+.stat__label { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); margin-top: 0.5rem; }
+
+/* Orders table supplemental (id column + muted helper) */
+.orders__id { font-weight: 600; color: var(--teal); }
+.orders__id a:hover { color: var(--brass); }
+.muted { color: var(--ink-soft); font-size: 0.82rem; }
+
+/* Login */
+.login { min-height: 100vh; display: grid; place-items: center; padding: 2rem; background: linear-gradient(180deg, var(--paper), var(--mist)); }
+.login__card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 2.6rem;
+  box-shadow: 0 40px 80px -55px rgba(10,31,68,0.5);
+}
+.login__brand { display: flex; align-items: center; gap: 0.6rem; justify-content: center; margin-bottom: 1.6rem; }
+.login__brand-logo { width: 100%; max-width: 300px; height: auto; display: block; margin: 0 auto; }
+.login__card h1 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 500; text-align: center; margin-bottom: 0.4rem; }
+.login__card p.login__sub { text-align: center; color: var(--ink-soft); font-size: 0.9rem; margin-bottom: 1.8rem; }
+.login__form { display: grid; gap: 1.1rem; }
+.login__form .login__submit { width: 100%; margin-top: 0.4rem; }
+.login__card .admin-ui__card-header { padding-bottom: 0; }
+.login__card .admin-ui__card-content { padding-top: 1.8rem; }
+.login__error { background: #fdeaea; color: #a83030; border: 1px solid #f2c8c8; border-radius: 10px; padding: 0.7rem 0.9rem; font-size: 0.85rem; text-align: center; }
+
+/* CMS editor */
+.cms__intro { margin-bottom: 1.6rem; color: var(--ink-soft); font-size: 0.95rem; }
+.cms__sections { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.cms__card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.4rem;
+  transition: all 0.3s var(--ease);
+}
+.cms__card:hover { border-color: var(--eucalyptus); box-shadow: 0 20px 45px -40px rgba(10,31,68,0.5); }
+.cms__card h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 500; text-transform: capitalize; margin-bottom: 0.3rem; }
+.cms__card p { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 1rem; }
+
+.cms__editor { display: grid; gap: 1.2rem; max-width: 820px; }
+.cms-form__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+.cms-form__stack { display: grid; gap: 1.2rem; }
+.cms-form__fieldset { border: 1px solid var(--line); border-radius: 12px; padding: 1.2rem; display: grid; gap: 0.8rem; }
+.cms-form__fieldset legend { font-weight: 600; padding: 0 0.4rem; }
+.cms-form__row { display: flex; gap: 0.8rem; align-items: flex-end; flex-wrap: wrap; }
+.cms-form__row--stack { flex-direction: column; align-items: stretch; }
+.cms-form__table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.cms-form__table th { text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); padding: 0.4rem 0.5rem; }
+.cms-form__table td { padding: 0.3rem 0.5rem; }
+.cms__hint { font-size: 0.8rem; color: var(--ink-soft); }
+.cms__bar { display: flex; align-items: center; gap: 1rem; margin-top: 0.4rem; }
+.cms__status { font-size: 0.88rem; font-weight: 500; }
+.cms__status--ok { color: var(--teal); }
+.cms__status--err { color: var(--danger); }
+.cms__back { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 1.2rem; display: inline-block; }
+.cms__back:hover { color: var(--teal); }
+
+/* Visual page editor */
+.cms-visual { display: grid; gap: 1rem; }
+.cms-visual__page-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
+.cms-visual__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); display: inline-block; }
+.cms-visual__card { transition: box-shadow 0.2s ease; }
+.cms-visual__card:hover { box-shadow: 0 4px 16px -8px rgba(10,31,68,0.2); }
+.cms-visual__header { display: flex; align-items: center; justify-content: space-between; }
+.cms-visual__header-content { flex: 1; }
+.cms-visual__title { text-transform: none !important; }
+.cms-visual__chevron { font-size: 1.4rem; transition: transform 0.2s ease; color: var(--ink-soft); }
+.cms-visual__chevron--open { transform: rotate(180deg); }
+
+@media (max-width: 820px) {
+  .admin__topbar { flex-wrap: wrap; padding: 0.8rem 1rem; gap: 0.8rem; }
+  .admin__topbar-right { flex-wrap: wrap; gap: 0.8rem; }
+  .admin__nav { flex-direction: row; flex-wrap: wrap; }
+  .admin__main { padding: 1.5rem; }
+}
+
+/* Invoice editor */
+.invoice-editor__summary { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.8rem; margin-bottom: 2rem; padding: 1.2rem; background: var(--mist); border-radius: 12px; }
+.invoice-editor__detail { display: flex; flex-direction: column; gap: 0.2rem; }
+.invoice-editor__form { display: grid; gap: 1rem; }
+.invoice-editor__section-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; }
+.invoice-editor__table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.invoice-editor__table th { text-align: left; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); padding: 0.5rem; }
+.invoice-editor__table td { padding: 0.4rem 0.5rem; }
+.invoice-editor__subtotal { font-weight: 600; white-space: nowrap; }
+.invoice-editor__actions-row { display: flex; gap: 0.8rem; }
+.invoice-editor__total { display: flex; justify-content: flex-end; align-items: center; gap: 1rem; font-size: 1.1rem; padding: 0.8rem 0; border-top: 2px solid var(--line); }
+.invoice-editor__total strong { font-size: 1.3rem; color: var(--teal); }
+.invoice-editor__footer { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; padding-top: 0.5rem; }
+
+/* Order detail page */
+.order-detail__status-card { margin-bottom: 1.5rem; }
+.orders__id a { color: var(--teal); font-weight: 600; text-decoration: none; }
+.orders__id a:hover { text-decoration: underline; }
+
+/* Create order form */
+.create-order-form { display: grid; gap: 1rem; }
+
+/* Highlight new/pending orders from the website */
+.orders__row--new td { background: #fdf8e7; border-left: 3px solid var(--brass, #c9a94e); }
+.orders__row--new td:first-child { border-left-width: 3px; }
+.orders__row--new td:not(:first-child) { border-left: none; }

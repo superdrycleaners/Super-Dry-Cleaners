@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <!-- Hanger (gold) -->
+  <path d="M60 18c0-6 4-10 10-10s10 4 10 10" stroke="#c9a94e" stroke-width="2.5" fill="none"/>
+  <path d="M70 8V4" stroke="#c9a94e" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="70" cy="3" r="2" fill="#c9a94e"/>
+  <path d="M48 38 70 18l22 20" stroke="#c9a94e" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Wave (navy to blue gradient) -->
+  <path d="M46 42c8-4 14-2 20 2s14 6 22 2" stroke="#0a1f44" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M44 48c8-4 14-2 20 2s14 6 22 2" stroke="#1a5fb4" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M48 54c6-3 11-1 16 2s12 5 18 1" stroke="#4a90d9" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Sparkles -->
+  <circle cx="88" cy="14" r="1.5" fill="#1a5fb4"/>
+  <circle cx="52" cy="22" r="1" fill="#1a5fb4"/>
+  <circle cx="92" cy="28" r="1" fill="#1a5fb4"/>
+  <!-- Text: SUPERDRYCLEANERS -->
+  <text x="140" y="44" font-family="Georgia, serif" font-size="16" font-weight="600" fill="#0a1f44" text-anchor="middle" letter-spacing="2">SUPERDRYCLEANERS</text>
+  <!-- Subtitle -->
+  <text x="140" y="62" font-family="sans-serif" font-size="9" font-weight="500" fill="#1a5fb4" text-anchor="middle" letter-spacing="3">LAUNDRY SERVICES</text>
+  <!-- Since 2005 -->
+  <text x="140" y="74" font-family="sans-serif" font-size="7" fill="#c9a94e" text-anchor="middle" letter-spacing="1.5">— SINCE 2005 —</text>
+  <!-- Gold decorative lines -->
+  <line x1="95" y1="50" x2="60" y2="50" stroke="#c9a94e" stroke-width="0.8"/>
+  <line x1="185" y1="50" x2="220" y2="50" stroke="#c9a94e" stroke-width="0.8"/>
+</svg>
