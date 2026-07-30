@@ -14,16 +14,21 @@ export async function GET(request) {
 
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Perform a lightweight request. We'll query a dummy table. 
-    // Even if the table doesn't exist, the request reaches the database and counts as activity,
-    // which is sufficient to prevent the project from being paused.
-    const { error } = await supabase.from('keep_alive_ping_dummy').select('*').limit(1);
+    // Insert a new log entry to keep the database awake and keep a record of the ping.
+    const { data, error } = await supabase
+      .from('keep_alive_logs')
+      .insert([{ pinged_at: new Date().toISOString() }])
+      .select();
+
+    if (error) {
+      throw new Error(`Failed to log ping: ${error.message}`);
+    }
 
     return NextResponse.json(
       {
         success: true,
-        message: 'Supabase pinged successfully.',
-        db_status: error ? 'pinged_with_expected_error' : 'ok',
+        message: 'Supabase ping logged successfully.',
+        log: data[0]
       },
       { status: 200 }
     );
