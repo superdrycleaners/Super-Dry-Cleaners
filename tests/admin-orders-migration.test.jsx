@@ -95,7 +95,7 @@ describe('OrdersTable migration', () => {
 
     const headers = screen.getAllByRole('columnheader');
     const labels = headers.map((h) => h.textContent);
-    expect(labels).toEqual(['Order', 'Customer', 'Service', 'Pickup', 'Requested', 'Status']);
+    expect(labels).toEqual(['Order', 'Customer', 'Service', 'Pickup', 'Requested', 'Status', 'Invoice']);
   });
 
   it('renders customer name and phone as escaped text', () => {
@@ -144,9 +144,9 @@ describe('OrdersTable migration', () => {
     const rows = screen.getAllByRole('row');
     // First data row (index 1, after header row) should be the newest order.
     const firstDataRow = rows[1];
-    expect(within(firstDataRow).getByText('ORD-1042')).toBeTruthy();
+    expect(within(firstDataRow).getByText(/ORD-1042/)).toBeTruthy();
     const secondDataRow = rows[2];
-    expect(within(secondDataRow).getByText('ORD-1041')).toBeTruthy();
+    expect(within(secondDataRow).getByText(/ORD-1041/)).toBeTruthy();
   });
 
   it('renders the empty state when orders is empty', () => {

@@ -921,6 +921,16 @@ ol {
   display: grid;
   gap: 1.6rem;
 }
+.book__error-banner {
+  background: #fef2f2;
+  border: 1px solid #f87171;
+  color: #991b1b;
+  padding: 1rem 1.4rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
 .book__step {
   background: var(--paper);
   border: 1px solid var(--line);

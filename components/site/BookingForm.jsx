@@ -95,6 +95,22 @@ const BookingForm = () => {
 
   return (
     <form className="book__form" action={formAction} noValidate>
+      {/* Honeypot field for bot protection */}
+      <input
+        type="text"
+        name="website_trap"
+        tabIndex={-1}
+        autoComplete="off"
+        style={{ position: 'absolute', opacity: 0, pointerEvents: 'none', height: 0, width: 0, left: '-9999px' }}
+        aria-hidden="true"
+      />
+
+      {errors._form && (
+        <div className="book__error-banner" role="alert">
+          <p>{errors._form}</p>
+        </div>
+      )}
+
       {/* Step 1 — Contact */}
       <fieldset className="book__step">
         <legend>

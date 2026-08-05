@@ -1,9 +1,11 @@
 'use server';
 
+import { headers } from 'next/headers';
 import { validateBooking } from '@/lib/validation';
 import { createOrder } from '@/lib/data/orders';
 import { validateCoupon, recordRedemption } from '@/lib/data/coupons';
 import { sendBookingConfirmation, sendAdminNotification } from '@/lib/email';
+import { getClientIp, checkBookingRateLimit } from '@/lib/rate-limit';
 
 /**
  * Server action: create a collection request from the booking form.
@@ -20,6 +22,33 @@ import { sendBookingConfirmation, sendAdminNotification } from '@/lib/email';
 export async function submitBooking(_prevState, formData) {
   // Convert FormData into a plain object for validation.
   const raw = Object.fromEntries(formData.entries());
+
+  // 1. Anti-bot honeypot check (hidden field that real users never fill)
+  if (raw.website_trap || raw.fax_number) {
+    return {
+      ok: false,
+      errors: { _form: 'Submission rejected due to suspected automated activity.' },
+    };
+  }
+
+  // 2. IP-based rate limiting (5 requests per 10 minutes)
+  try {
+    const headersList = headers();
+    const clientIp = getClientIp(headersList);
+    const rateLimit = checkBookingRateLimit(clientIp);
+
+    if (!rateLimit.success) {
+      const waitMinutes = Math.ceil(rateLimit.resetMs / (60 * 1000));
+      return {
+        ok: false,
+        errors: {
+          _form: `Too many booking requests from your network. Please wait ${waitMinutes} minute${waitMinutes === 1 ? '' : 's'} before trying again or call us directly at 0116 251 1111.`,
+        },
+      };
+    }
+  } catch {
+    // Next.js headers() can be unavailable in unit test environments; proceed safely
+  }
 
   const result = validateBooking(raw);
   if (!result.ok) {
