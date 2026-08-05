@@ -31,7 +31,13 @@ export default async function HomePage() {
       {/* Hero */}
       <section className="hero" id="home">
         <div className="container hero__inner">
-          <Reveal as="p" className="eyebrow">{home.eyebrow}</Reveal>
+          <Reveal>
+            <img
+              src="/Frame 33.svg"
+              alt={brand.name || 'Super Dry Cleaners'}
+              className="hero__logo"
+            />
+          </Reveal>
           <Reveal as="h1" className="hero__title">{home.title}</Reveal>
           <Reveal as="p" className="hero__lede">{home.lede}</Reveal>
           <Reveal className="hero__actions">

@@ -2,25 +2,27 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
 
-/** Primary navigation links — all point to anchor sections on the single page. */
+/** Primary navigation links */
 const LINKS = [
-  { href: '/#home', label: 'Home' },
-  { href: '/#services', label: 'Services' },
-  { href: '/#pricing', label: 'Pricing' },
-  { href: '/#about', label: 'About' },
+  { href: '/#home', label: 'Home', sectionId: 'home' },
+  { href: '/eco', label: 'Eco', isPage: true },
+  { href: '/#services', label: 'Services', sectionId: 'services' },
+  { href: '/#pricing', label: 'Pricing', sectionId: 'pricing' },
+  { href: '/#about', label: 'About', sectionId: 'about' },
 ];
 
 /**
  * Fixed public site navigation bar.
- *
- * Uses the brand logo SVG. Adds a frosted background once the page is scrolled
- * and provides a mobile toggle menu. Includes WhatsApp + Book CTA buttons.
+ * Dynamically highlights the active route/section based on current pathname and scroll.
  */
 const SiteNav = ({ whatsapp = '447889693265' }) => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -28,6 +30,37 @@ const SiteNav = ({ whatsapp = '447889693265' }) => {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    if (pathname !== '/') return;
+
+    const sections = ['home', 'services', 'pricing', 'about'];
+    const handleScrollSpy = () => {
+      const scrollPos = window.scrollY + 120;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sections[i]);
+          return;
+        }
+      }
+      setActiveSection('home');
+    };
+
+    window.addEventListener('scroll', handleScrollSpy, { passive: true });
+    handleScrollSpy();
+    return () => window.removeEventListener('scroll', handleScrollSpy);
+  }, [pathname]);
+
+  const isLinkActive = (link) => {
+    if (link.isPage) {
+      return pathname === link.href;
+    }
+    if (pathname === '/') {
+      return activeSection === link.sectionId;
+    }
+    return false;
+  };
 
   return (
     <header className={`nav${scrolled ? ' is-scrolled' : ''}${open ? ' is-open' : ''}`}>
@@ -39,13 +72,14 @@ const SiteNav = ({ whatsapp = '447889693265' }) => {
 
         <nav className="nav__links" aria-label="Primary">
           {LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
+              className={isLinkActive(link) ? 'is-current' : undefined}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -59,7 +93,7 @@ const SiteNav = ({ whatsapp = '447889693265' }) => {
           >
             WhatsApp
           </a>
-          <a href="#book" className="btn btn--solid nav__cta">
+          <a href="/#book" className="btn btn--solid nav__cta" onClick={() => setOpen(false)}>
             Book Collection
           </a>
         </div>
