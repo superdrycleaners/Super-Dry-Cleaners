@@ -11,8 +11,8 @@
     "tagline": "Leicester's premium dry cleaning & laundry service since 2005.",
     "footerText": "We care for your clothes like they're our own.",
     "copyright": "All rights reserved.",
-    "openingHours": "Monday – Saturday, 9:00am – 6:00pm",
-    "closedDay": "Sunday: Closed",
+    "openingHours": "Monday – Friday, 9:00am – 6:00pm",
+    "closedDay": "Saturday - Sunday: Closed",
     "freeDeliveryThreshold": "£25",
     "areasServed": "Leicester City Centre · Clarendon Park · Oadby · Knighton · Evington · Stoneygate · Highfields · Braunstone · Glenfield · Beaumont Leys · Belgrave · Wigston · and more"
   },
@@ -38,7 +38,7 @@
     "bookingIntro": "Tell us where and when. Drop a pin for the exact pickup spot — we'll confirm within the hour.",
     "stats": [
       { "value": "20+", "label": "Years of experience" },
-      { "value": "6 days", "label": "Open Mon–Sat" },
+      { "value": "5 days", "label": "Open Mon–Fri" },
       { "value": "4.9★", "label": "Customer rated" }
     ]
   },
