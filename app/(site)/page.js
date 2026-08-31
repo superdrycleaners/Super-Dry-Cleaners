@@ -31,16 +31,16 @@ export default async function HomePage() {
       {/* Hero */}
       <section className="hero" id="home">
         <div className="container hero__inner">
-          <Reveal>
+          <Reveal delay={0.1}>
             <img
               src="/Frame 33.svg"
               alt={brand.name || 'Super Dry Cleaners'}
               className="hero__logo"
             />
           </Reveal>
-          <Reveal as="h1" className="hero__title">{home.title}</Reveal>
-          <Reveal as="p" className="hero__lede">{home.lede}</Reveal>
-          <Reveal className="hero__actions">
+          <Reveal as="h1" className="hero__title" delay={0.2}>{home.title}</Reveal>
+          <Reveal as="p" className="hero__lede" delay={0.3}>{home.lede}</Reveal>
+          <Reveal className="hero__actions" delay={0.4}>
             <a href="#book" className="btn btn--solid">{home.ctaBooking || 'Book Collection'}</a>
             <a href="#pricing" className="btn btn--ghost">{home.ctaPricing || 'View Pricing'}</a>
             <a href={`https://wa.me/${brand.whatsapp || '447889693265'}`} className="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
@@ -48,7 +48,7 @@ export default async function HomePage() {
             </a>
           </Reveal>
 
-          <Reveal as="ul" className="hero__stats">
+          <Reveal as="ul" className="hero__stats" delay={0.5}>
             {home.stats.map((stat) => (
               <li key={stat.label}>
                 <strong>{stat.value}</strong>

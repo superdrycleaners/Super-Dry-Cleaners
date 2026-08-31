@@ -367,7 +367,6 @@ ol {
   display: inline-flex;
   gap: 2.5rem;
   align-items: center;
-  animation: scroll 28s linear infinite;
 }
 .marquee__track span {
   font-family: var(--font-display);
@@ -379,14 +378,7 @@ ol {
   color: var(--eucalyptus);
   font-style: normal;
 }
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
+
 
 /* ---------- Sections ---------- */
 .section {
@@ -1259,19 +1251,7 @@ ol {
   color: var(--ink-soft);
 }
 
-/* ---------- Reveal animation ---------- */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity 0.9s var(--ease),
-    transform 0.9s var(--ease);
-  will-change: opacity, transform;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
+
 
 /* ---------- Top bar ---------- */
 .topbar {
@@ -1596,29 +1576,13 @@ ol {
     animation: none !important;
     transition: none !important;
   }
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 /* =============================================================
    ECO PAGE — lagoon® Advanced Care (Navy & Gold Luxury Theme)
    ============================================================= */
 
-/* ---------- Reveal animations ---------- */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.7s var(--ease),
-    transform 0.7s var(--ease);
-  transition-delay: var(--delay, 0s);
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+
 
 /* ── HERO ──────────────────────────────────────────────────── */
 .eco-hero {

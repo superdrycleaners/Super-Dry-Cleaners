@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 /** Words shown in the scrolling hero marquee. */
 const WORDS = [
   'Dry Cleaning',
@@ -12,8 +16,7 @@ const WORDS = [
 
 /**
  * Decorative infinite marquee of service keywords under the hero.
- *
- * The word list is duplicated so the CSS translateX(-50%) loop is seamless.
+ * Powered by framer-motion for smooth, reliable scrolling.
  */
 const Marquee = () => {
   // Duplicate the list to create a continuous, gapless scroll loop.
@@ -21,15 +24,22 @@ const Marquee = () => {
 
   return (
     <div className="marquee" aria-hidden="true">
-      <div className="marquee__track">
+      <motion.div 
+        className="marquee__track"
+        animate={{ x: [0, "-50%"] }}
+        transition={{
+          repeat: Infinity,
+          ease: "linear",
+          duration: 28,
+        }}
+      >
         {loop.map((word, i) => (
-          // Index key is acceptable here: a fixed, non-reordering decorative list.
           <span key={`${word}-${i}`}>
             {word}
             <span aria-hidden="true"> · </span>
           </span>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

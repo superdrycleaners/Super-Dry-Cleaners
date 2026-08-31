@@ -1,53 +1,32 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 /**
- * Wrapper that fades/reveals its children when scrolled into view.
- *
- * Uses IntersectionObserver and unobserves after the first reveal so the
- * animation runs once. Respects reduced-motion via the CSS `.reveal` rules.
+ * Wrapper that fades/reveals its children when scrolled into view using framer-motion.
  *
  * @param {object} props
  * @param {import('react').ReactNode} props.children - Content to reveal.
  * @param {string} [props.as='div'] - Element/tag to render as the wrapper.
- * @param {string} [props.className] - Extra classes appended to `reveal`.
+ * @param {string} [props.className] - Extra classes.
+ * @param {number} [props.delay=0] - Delay before animation starts in seconds.
  */
-const Reveal = ({ children, as = 'div', className = '', ...otherProps }) => {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
+const Reveal = ({ children, as = 'div', className = '', delay = 0, ...otherProps }) => {
+  // Map standard HTML tags to motion components
+  const Tag = motion[as] || motion.div;
 
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return undefined;
-
-    // Fallback: if IO is unavailable, show immediately.
-    if (!('IntersectionObserver' in window)) {
-      setVisible(true);
-      return undefined;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            obs.unobserve(entry.target); // reveal once, then stop watching
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
-  const Tag = as;
   return (
     <Tag
-      ref={ref}
-      className={`reveal${visible ? ' is-visible' : ''}${className ? ` ${className}` : ''}`}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "0px 0px -40px 0px", amount: 0.12 }}
+      transition={{ 
+        duration: 0.7, 
+        delay, 
+        ease: [0.16, 1, 0.3, 1] 
+      }}
+      className={className}
       {...otherProps}
     >
       {children}
@@ -59,6 +38,7 @@ Reveal.propTypes = {
   children: PropTypes.node.isRequired,
   as: PropTypes.string,
   className: PropTypes.string,
+  delay: PropTypes.number,
 };
 
 export default Reveal;

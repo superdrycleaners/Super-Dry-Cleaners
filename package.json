@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "2.49.1",
+    "framer-motion": "^13.1.1",
     "jspdf": "2.5.2",
     "keen-slider": "6.8.6",
     "leaflet": "1.9.4",
