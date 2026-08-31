@@ -11,6 +11,8 @@ import AreasServed from '@/components/site/AreasServed';
 import Testimonial from '@/components/site/Testimonial';
 import BookingForm from '@/components/site/BookingForm';
 import OurProcess from '@/components/site/OurProcess';
+import HeroContent from '@/components/site/HeroContent';
+import FloatingLeaves from '@/components/site/FloatingLeaves';
 
 /**
  * Single-page layout: all content on one scrolling page with anchor sections.
@@ -29,34 +31,9 @@ export default async function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero" id="home">
-        <div className="container hero__inner">
-          <Reveal delay={0.1}>
-            <img
-              src="/Frame 33.svg"
-              alt={brand.name || 'Super Dry Cleaners'}
-              className="hero__logo"
-            />
-          </Reveal>
-          <Reveal as="h1" className="hero__title" delay={0.2}>{home.title}</Reveal>
-          <Reveal as="p" className="hero__lede" delay={0.3}>{home.lede}</Reveal>
-          <Reveal className="hero__actions" delay={0.4}>
-            <a href="#book" className="btn btn--solid">{home.ctaBooking || 'Book Collection'}</a>
-            <a href="#pricing" className="btn btn--ghost">{home.ctaPricing || 'View Pricing'}</a>
-            <a href={`https://wa.me/${brand.whatsapp || '447889693265'}`} className="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
-              {home.ctaWhatsapp || 'WhatsApp Us'}
-            </a>
-          </Reveal>
-
-          <Reveal as="ul" className="hero__stats" delay={0.5}>
-            {home.stats.map((stat) => (
-              <li key={stat.label}>
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-              </li>
-            ))}
-          </Reveal>
-        </div>
+      <section className="hero" id="home" style={{ position: 'relative', overflow: 'hidden' }}>
+        <FloatingLeaves />
+        <HeroContent brand={brand} home={home} />
         <Marquee />
       </section>
 
