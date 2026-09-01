@@ -180,16 +180,16 @@ ol {
   z-index: 50;
   padding: 1rem 0;
   top: 30px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--line);
   transition:
     background 0.4s var(--ease),
     padding 0.4s var(--ease),
     box-shadow 0.4s var(--ease);
 }
 .nav.is-scrolled {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(14px);
   padding: 0.7rem 0;
-  box-shadow: 0 1px 0 var(--line);
 }
 .nav__inner {
   display: flex;
@@ -288,54 +288,134 @@ ol {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ---------- Hero (centered) ---------- */
+/* ---------- Hero (side-by-side) ---------- */
 .hero {
   position: relative;
-  padding-top: clamp(4rem, 20vh, 14rem);
-  background:
-    radial-gradient(
-      ellipse 70% 55% at 50% -5%,
-      rgba(26, 95, 180, 0.28),
-      transparent 62%
-    ),
-    linear-gradient(180deg, var(--paper), var(--mist));
+  background: var(--mist);
 }
+
+.hero__content-wrapper {
+  position: relative;
+  min-height: clamp(600px, 90vh, 900px);
+  display: flex;
+  align-items: center;
+}
+
 .hero__inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
+  width: 50%;
+  padding-right: 3rem;
+  padding-top: clamp(4rem, 10vh, 6rem);
   padding-bottom: 4.5rem;
 }
+
 .hero__title {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(2.6rem, 6.8vw, 5.2rem);
-  line-height: 1.03;
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
+  color: var(--teal-deep);
 }
+
+.title-pill {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  padding: 0 0.4em;
+  border-radius: 100px;
+  line-height: 1.1;
+  transform: translateY(-4px);
+}
+
 .hero__lede {
-  max-width: 56ch;
+  max-width: 48ch;
   color: var(--ink-soft);
-  font-size: 1.12rem;
-  margin-bottom: 2.2rem;
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
 }
+
 .hero__actions {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.4rem;
+  justify-content: flex-start;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 }
+
+/* Image Wrapper (Absolute Right) */
+.hero__image-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__loved-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.6rem 1.2rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--teal-deep);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+/* For mobile */
+@media (max-width: 900px) {
+  .hero__content-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero__inner {
+    width: 100%;
+    padding-right: 0;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 3rem;
+  }
+  .hero__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    order: -1;
+  }
+  .hero__actions {
+    justify-content: center;
+  }
+}
+
+/* Keep stats for bottom of hero */
 .hero__stats {
   display: flex;
-  justify-content: center;
-  gap: 3.2rem;
+  justify-content: flex-start;
+  gap: 2.5rem;
   flex-wrap: wrap;
-  border-top: 1px solid var(--line);
-  padding-top: 1.8rem;
+  padding-top: 1rem;
 }
 .hero__stats li {
   display: flex;
@@ -343,7 +423,7 @@ ol {
 }
 .hero__stats strong {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
   line-height: 1;
   color: var(--teal);
@@ -352,7 +432,7 @@ ol {
   font-size: 0.8rem;
   color: var(--ink-soft);
   letter-spacing: 0.04em;
-  margin-top: 0.4rem;
+  margin-top: 0.2rem;
 }
 
 /* Marquee */
@@ -378,7 +458,6 @@ ol {
   color: var(--eucalyptus);
   font-style: normal;
 }
-
 
 /* ---------- Sections ---------- */
 .section {
@@ -1251,8 +1330,6 @@ ol {
   color: var(--ink-soft);
 }
 
-
-
 /* ---------- Top bar ---------- */
 .topbar {
   background: var(--dark);
@@ -1581,8 +1658,6 @@ ol {
 /* =============================================================
    ECO PAGE — lagoon® Advanced Care (Navy & Gold Luxury Theme)
    ============================================================= */
-
-
 
 /* ── HERO ──────────────────────────────────────────────────── */
 .eco-hero {
@@ -2270,4 +2345,3 @@ ol {
     font-size: clamp(2.4rem, 12vw, 3.4rem);
   }
 }
-

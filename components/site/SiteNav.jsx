@@ -63,7 +63,7 @@ const SiteNav = ({ whatsapp = '447889693265' }) => {
   };
 
   return (
-    <header className={`nav${scrolled ? ' is-scrolled' : ''}${open ? ' is-open' : ''}`}>
+    <header className={`nav${scrolled ? ' ' : ''}${open ? ' is-open' : ''}`}>
       <div className="container nav__inner">
         <Link href="/" className="brand" aria-label="Super Dry Cleaners home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
