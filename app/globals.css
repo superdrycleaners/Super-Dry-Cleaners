@@ -308,7 +308,7 @@ ol {
   text-align: left;
   width: 50%;
   padding-right: 3rem;
-  padding-top: clamp(4rem, 10vh, 6rem);
+  padding-top: 6rem;
   padding-bottom: 4.5rem;
 }
 
