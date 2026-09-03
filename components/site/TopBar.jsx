@@ -18,7 +18,7 @@ const TopBar = ({ brand = {} }) => (
         <span aria-hidden="true">✉️</span> {brand.email || 'info@superdrycleaners.co'}
       </a>
       <span className="topbar__item topbar__hours">
-        <span aria-hidden="true">🕐</span> {brand.openingHours || 'Mon–Sat: 9am – 6pm'}
+        <span aria-hidden="true">🕐</span> {brand.openingHours || 'Mon–Fri: 9am – 6pm'}
       </span>
     </div>
   </div>
