@@ -175,22 +175,12 @@ ol {
 
 /* ---------- Navigation ---------- */
 .nav {
-  position: fixed;
-  inset: 0 0 auto 0;
-  z-index: 50;
+  position: relative;
   padding: 1rem 0;
-  top: 30px;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 1px 0 var(--line);
-  transition:
-    background 0.4s var(--ease),
-    padding 0.4s var(--ease),
-    box-shadow 0.4s var(--ease);
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--line);
 }
-.nav.is-scrolled {
-  padding: 0.7rem 0;
-}
+
 .nav__inner {
   display: flex;
   align-items: center;
@@ -802,7 +792,7 @@ ol {
   overflow: hidden;
 }
 .cat__group--offers::before {
-  content: "★ LIMITED TIME";
+  content: "LIMITED TIME";
   position: absolute;
   top: 1rem;
   right: 1.4rem;
@@ -1357,7 +1347,7 @@ ol {
 
 /* ---------- Brand logo ---------- */
 .brand__logo {
-  height: 56px;
+  height: 80px;
   width: auto;
 }
 
@@ -1605,6 +1595,13 @@ ol {
   }
   .hero__actions {
     gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero__actions .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
   .hero__stats {
     gap: 1.8rem;
@@ -2343,5 +2340,136 @@ ol {
   }
   .eco-hero__title {
     font-size: clamp(2.4rem, 12vw, 3.4rem);
+  }
+}
+
+/* Postcode Checker */
+.postcode-checker {
+  background: var(--paper);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 2rem;
+  border: 1px solid var(--line);
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+.postcode-checker--success {
+  background: rgba(37, 211, 102, 0.1);
+  border-color: rgba(37, 211, 102, 0.3);
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.postcode-checker__title {
+  margin-bottom: 1rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+}
+
+.postcode-checker__text {
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+
+.postcode-checker__success-text {
+  color: #166534;
+  font-weight: 600;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.postcode-checker__form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.postcode-checker__input {
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  flex: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+  min-width: 0;
+}
+
+.postcode-checker__btn {
+  white-space: nowrap;
+}
+
+.postcode-checker__error {
+  color: #e53e3e;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .postcode-checker {
+    padding: 2rem 1.2rem;
+  }
+  .postcode-checker__title {
+    font-size: 1.5rem;
+  }
+  .postcode-checker__form {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .postcode-checker__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ---------- Scroll-to-top button ---------- */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--dark, #0a1f44);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 16px rgba(10, 31, 68, 0.28);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.scroll-top--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.scroll-top:hover {
+  background: var(--brass, #c9a94e);
+  box-shadow: 0 6px 20px rgba(201, 169, 78, 0.36);
+  transform: translateY(-3px);
+}
+.scroll-top:active {
+  transform: translateY(0);
+}
+@media (max-width: 480px) {
+  .scroll-top {
+    bottom: 1.2rem;
+    right: 1.2rem;
+    width: 42px;
+    height: 42px;
   }
 }

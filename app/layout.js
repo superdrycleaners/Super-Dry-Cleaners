@@ -5,9 +5,25 @@ import './globals.css';
  * Applies to every route, including the admin area.
  */
 export const metadata = {
-  title: 'Super Dry Cleaners — Premium Laundry & Dry Cleaning, Leicester',
+  title: 'Dry Cleaning & Laundry Services Leicester | Super Dry Cleaners',
   description:
-    "Leicester's premium dry cleaning and laundry service since 2005. Free collection & delivery on orders over £25.",
+    'Professional dry cleaning, laundry, ironing and specialist cleaning services in Leicester. Convenient collection and delivery for homes and businesses.',
+  openGraph: {
+    title: 'Dry Cleaning & Laundry Services Leicester | Super Dry Cleaners',
+    description: 'Professional dry cleaning, laundry, ironing and specialist cleaning services in Leicester. Convenient collection and delivery for homes and businesses.',
+    url: 'https://superdrycleaners.co.uk',
+    siteName: 'Super Dry Cleaners',
+    images: [
+      {
+        url: 'https://superdrycleaners.co.uk/hero-image-sd.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Super Dry Cleaners Leicester',
+      },
+    ],
+    locale: 'en_GB',
+    type: 'website',
+  },
   icons: {
     icon: '/Frame 33.svg',
   },
@@ -33,6 +49,38 @@ export default function RootLayout({ children }) {
           href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
           crossOrigin="anonymous"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "DryCleaningOrLaundry",
+              name: "Super Dry Cleaners",
+              image: "https://superdrycleaners.co.uk/hero-image-sd.jpeg",
+              "@id": "https://superdrycleaners.co.uk",
+              url: "https://superdrycleaners.co.uk",
+              telephone: "+447889693265",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Leicester City Centre",
+                addressLocality: "Leicester",
+                addressCountry: "UK"
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 52.6369,
+                longitude: -1.1398
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                opens: "09:00",
+                closes: "18:00"
+              },
+              priceRange: "££"
+            })
+          }}
         />
       </head>
       <body>{children}</body>

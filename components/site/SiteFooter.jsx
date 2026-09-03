@@ -14,8 +14,9 @@ const SiteFooter = ({ brand }) => {
       <div className="container footer__inner">
         <div className="footer__brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/Frame 32.svg" alt="Super Dry Cleaners — Laundry Services Since 2005" className="footer__brand-logo" />
-          <p>Leicester&apos;s premium dry cleaning &amp; laundry service since 2005. We care for your clothes like they&apos;re our own.</p>
+          <img src="/Frame 32.svg" alt="Super Dry Cleaners" className="footer__brand-logo" />
+          <h3 style={{ fontSize: '1.2rem', marginTop: '1rem', marginBottom: '0.5rem', color: 'var(--ink)' }}>Super Dry Cleaners</h3>
+          <p>Professional Dry Cleaning &amp; Laundry Services in Leicester</p>
         </div>
         <nav className="footer__col" aria-label="Services">
           <h4>Services</h4>
@@ -29,15 +30,14 @@ const SiteFooter = ({ brand }) => {
         <div className="footer__col">
           <h4>Contact</h4>
           <a href={`tel:${brand.phoneHref}`}>{brand.phone}</a>
-          {brand.phoneLandline && <a href={`tel:${brand.phoneLandline.replace(/\s/g, '')}`}>{brand.phoneLandline}</a>}
           <a href={`mailto:${brand.email}`}>{brand.email}</a>
           <a href={`https://wa.me/${brand.whatsapp || '447889693265'}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           <p className="footer__addr">{brand.address}</p>
         </div>
         <div className="footer__col">
           <h4>Opening Hours</h4>
-          <p className="footer__hours">{brand.openingHours || 'Monday – Saturday'}</p>
-          <p className="footer__hours">{brand.closedDay || 'Sunday: Closed'}</p>
+          <p className="footer__hours">Monday – Friday: 9:00am – 6:00pm</p>
+          <p className="footer__hours">Saturday – Sunday: Closed</p>
           <h4 style={{ marginTop: '1.4rem' }}>Quick Links</h4>
           <a href="#about">About Us</a>
           <a href="#pricing">Pricing</a>

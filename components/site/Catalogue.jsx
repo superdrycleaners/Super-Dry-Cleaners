@@ -28,6 +28,7 @@ const CategoryIcons = {
  */
 const Catalogue = ({ groups }) => {
   const [filter, setFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const tabs = [
     { id: 'all', label: 'All Categories' },
@@ -63,6 +64,26 @@ const Catalogue = ({ groups }) => {
           }
         }
       `}} />
+
+      {/* Search Input */}
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+        <input 
+          type="text" 
+          placeholder="Search for an item (e.g., Shirt, Suit, Duvet)..." 
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          style={{
+            padding: '1rem 1.5rem',
+            width: '100%',
+            maxWidth: '500px',
+            borderRadius: '50px',
+            border: '1px solid var(--line)',
+            fontSize: '1rem',
+            outline: 'none',
+            fontFamily: 'var(--font-body)'
+          }}
+        />
+      </div>
 
       {/* Elegant Underline Tabs */}
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1.5rem', marginBottom: '5rem' }}>
@@ -109,6 +130,9 @@ const Catalogue = ({ groups }) => {
         {groups.map((group) => {
           if (filter !== 'all' && filter !== group.id) return null;
 
+          const filteredItems = group.items.filter(item => item.name.toLowerCase().includes(searchQuery.toLowerCase()));
+          if (filteredItems.length === 0) return null;
+
           const isOffer = group.id === 'offers';
           const icon = CategoryIcons[group.id] || CategoryIcons.default;
 
@@ -142,7 +166,7 @@ const Catalogue = ({ groups }) => {
 
               {/* Group Items */}
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                {group.items.map((item) => (
+                {filteredItems.map((item) => (
                   <li
                     key={item.name}
                     className="catalogue-item"

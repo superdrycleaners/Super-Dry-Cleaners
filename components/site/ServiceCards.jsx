@@ -1,6 +1,7 @@
 'use client';
 
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import Reveal from './Reveal';
 
 /**
@@ -17,9 +18,9 @@ const ServiceCards = ({ services, limit }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid var(--line)' }}>
       {list.map((service) => (
-        <Reveal 
-          as="article" 
-          key={service.title}
+        <Link href={`/services/${service.slug}`} key={service.title} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Reveal 
+            as="article"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -79,6 +80,7 @@ const ServiceCards = ({ services, limit }) => {
             </p>
           </div>
         </Reveal>
+        </Link>
       ))}
     </div>
   );

@@ -19,17 +19,9 @@ const LINKS = [
  * Dynamically highlights the active route/section based on current pathname and scroll.
  */
 const SiteNav = ({ whatsapp = '447889693265' }) => {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const pathname = usePathname();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     if (pathname !== '/') return;
@@ -63,11 +55,11 @@ const SiteNav = ({ whatsapp = '447889693265' }) => {
   };
 
   return (
-    <header className={`nav${scrolled ? ' ' : ''}${open ? ' is-open' : ''}`}>
+    <header className={`nav${open ? ' is-open' : ''}`}>
       <div className="container nav__inner">
         <Link href="/" className="brand" aria-label="Super Dry Cleaners home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/Frame 34.svg" alt="Super Dry Cleaners — Laundry Services Since 2005" className="brand__logo" />
+          <img src="/Frame 32.svg" alt="Super Dry Cleaners — Laundry Services Since 2005" className="brand__logo" />
         </Link>
 
         <nav className="nav__links" aria-label="Primary">

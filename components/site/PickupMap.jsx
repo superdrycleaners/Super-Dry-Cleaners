@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 /** Default map centre — Leicester city centre (Super Dry Cleaners service area). */
@@ -25,6 +25,8 @@ const PickupMap = ({ onPick, onGeocode }) => {
   // Hold Leaflet map/marker instances across renders without causing re-renders.
   const mapRef = useRef(null);
   const markerRef = useRef(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -77,7 +79,7 @@ const PickupMap = ({ onPick, onGeocode }) => {
       markerRef.current = marker;
 
       // Show a tooltip so users know the pin is interactive.
-      marker.bindPopup('📍 Drag me to your pickup spot').openPopup();
+      marker.bindPopup('Drag me to your pickup spot').openPopup();
       setTimeout(() => marker.closePopup(), 3000);
 
       /**
@@ -137,8 +139,55 @@ const PickupMap = ({ onPick, onGeocode }) => {
     );
   };
 
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    if (!searchQuery.trim() || !mapRef.current) return;
+    
+    setIsSearching(true);
+    try {
+      const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&q=${encodeURIComponent(searchQuery + ' Leicester')}`;
+      const res = await fetch(url, { headers: { 'Accept-Language': 'en-GB' } });
+      const data = await res.json();
+      
+      if (data && data.length > 0) {
+        const { lat, lon } = data[0];
+        const latitude = parseFloat(lat);
+        const longitude = parseFloat(lon);
+        
+        mapRef.current.setView([latitude, longitude], 16);
+        const setPin = containerRef.current?.__setPin;
+        if (setPin) setPin(latitude, longitude);
+      } else {
+        alert("Couldn't find that address. Please try dragging the pin manually.");
+      }
+    } catch {
+      alert("Error searching for address. Please try again or drag the pin.");
+    } finally {
+      setIsSearching(false);
+    }
+  };
+
   return (
-    <div className="map__wrap">
+    <div className="map__wrap" style={{ position: 'relative' }}>
+      <form 
+        onSubmit={handleSearch}
+        style={{ position: 'absolute', top: '10px', left: '50px', right: '10px', zIndex: 400, display: 'flex', gap: '5px' }}
+      >
+        <input 
+          type="text" 
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search postcode or address..."
+          style={{ flex: 1, padding: '8px 12px', borderRadius: '4px', border: '1px solid #ccc', boxShadow: '0 2px 5px rgba(0,0,0,0.2)', fontSize: '1rem', outline: 'none' }}
+        />
+        <button 
+          type="submit" 
+          disabled={isSearching}
+          style={{ padding: '8px 16px', borderRadius: '4px', border: 'none', background: 'var(--teal)', color: 'white', cursor: 'pointer', boxShadow: '0 2px 5px rgba(0,0,0,0.2)', fontWeight: 600 }}
+        >
+          {isSearching ? '...' : 'Search'}
+        </button>
+      </form>
       <div
         ref={containerRef}
         className="map"

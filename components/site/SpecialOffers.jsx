@@ -15,16 +15,18 @@ const SpecialOffers = ({ offers }) => (
   <section className="section offers" id="offers">
     <div className="container">
       <Reveal as="header" className="section__head section__head--center">
-        <p className="offers__badge">★ Limited Time Offers</p>
-        <h2 className="offers__title">Exclusive Deals</h2>
-        <p className="offers__sub">Save on your first order and selected services. Don&apos;t miss out!</p>
+        <p className="offers__badge">Limited Time Offers</p>
+        <h2 className="offers__title">CURRENT OFFERS</h2>
+        <p className="offers__sub">Save on selected services and your first order.</p>
       </Reveal>
       <div className="offers__grid">
         {offers.map((offer) => (
           <Reveal className="offers__card" key={offer.name}>
             <h3>{offer.name}</h3>
             <span className="offers__price">{offer.price}</span>
-            {offer.sub && <p>{offer.sub}</p>}
+            {offer.sub && <p style={{ fontWeight: 'bold' }}>{offer.sub}</p>}
+            {offer.validity && <p style={{ fontSize: '0.85rem', color: 'var(--ink-soft)' }}>Validity: {offer.validity}</p>}
+            {offer.terms && <p style={{ fontSize: '0.8rem', color: 'var(--ink-light)', marginTop: '0.5rem' }}>* {offer.terms}</p>}
           </Reveal>
         ))}
       </div>

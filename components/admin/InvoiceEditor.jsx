@@ -176,11 +176,29 @@ const InvoiceEditor = ({ order, catalogue }) => {
           <span className="admin-ui__field-label">Service</span>
           <span>{order.service}</span>
         </div>
+        {order.quantity && (
+          <div className="invoice-editor__detail">
+            <span className="admin-ui__field-label">Quantity</span>
+            <span>{order.quantity}</span>
+          </div>
+        )}
+        {order.deliveryPreference && (
+          <div className="invoice-editor__detail">
+            <span className="admin-ui__field-label">Delivery Preference</span>
+            <span>{order.deliveryPreference}</span>
+          </div>
+        )}
+        {order.notes && (
+          <div className="invoice-editor__detail">
+            <span className="admin-ui__field-label">Access Notes</span>
+            <span>{order.notes}</span>
+          </div>
+        )}
         {order.couponCode && (
           <div className="invoice-editor__detail">
             <span className="admin-ui__field-label">Offer Applied</span>
             <span style={{ color: 'var(--teal, #1f6f3f)', fontWeight: 600 }}>
-              🎁 {order.discountLabel || order.couponCode}
+              Offer: {order.discountLabel || order.couponCode}
               {order.discountType === 'percent' ? ` (${order.discountValue}% off)` : ` (£${((order.discountValue || 0) / 100).toFixed(2)} off)`}
             </span>
           </div>

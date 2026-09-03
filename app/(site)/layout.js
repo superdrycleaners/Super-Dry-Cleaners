@@ -1,6 +1,7 @@
 import SiteNav from '@/components/site/SiteNav';
 import TopBar from '@/components/site/TopBar';
 import SiteFooter from '@/components/site/SiteFooter';
+import ScrollToTop from '@/components/site/ScrollToTop';
 import { getContentSection } from '@/lib/data/content';
 
 /**
@@ -19,6 +20,7 @@ export default async function SiteLayout({ children }) {
       <SiteNav whatsapp={brand.whatsapp} />
       <main>{children}</main>
       <SiteFooter brand={brand} />
+      <ScrollToTop />
     </>
   );
 }

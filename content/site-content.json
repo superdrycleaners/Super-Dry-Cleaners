@@ -18,46 +18,46 @@
   },
   "home": {
     "eyebrow": "Since 2005 · Free collection & delivery on orders over £25",
-    "title": "Fresh. Clean. Perfect every time.",
-    "lede": "Super Dry Cleaners is Leicester's premium laundry and dry cleaning service. Professional care for your clothes, bedding and more — collected from your door, returned immaculate.",
-    "ctaBooking": "Book Collection",
-    "ctaPricing": "View Pricing",
-    "ctaWhatsapp": "WhatsApp Us",
+    "title": "Professional Dry Cleaning & Laundry Services in Leicester",
+    "lede": "Professional dry cleaning, laundry, ironing and specialist garment care — collected from your door and returned fresh, clean and beautifully finished.",
+    "ctaBooking": "BOOK A COLLECTION",
+    "ctaPricing": "VIEW PRICES",
+    "ctaWhatsapp": "WHATSAPP US",
     "processEyebrow": "How it works",
-    "processTitle": "Laundry made effortless.",
+    "processTitle": "How Our Collection & Delivery Service Works",
     "processIntro": "Four simple steps. No queues, no carrying — just clean clothes returned to your door.",
     "servicesEyebrow": "Our services",
-    "servicesTitle": "Everything your wardrobe needs.",
-    "servicesIntro": "From everyday laundry to specialist cleaning — we handle it all with care.",
+    "servicesTitle": "Our Laundry & Dry Cleaning Services",
+    "servicesIntro": "From everyday laundry to specialist garment care, we provide professional cleaning and finishing services for individuals and businesses.",
     "pricingEyebrow": "Pricing",
-    "pricingTitle": "Every item, every price.",
-    "pricingIntro": "Transparent, itemised pricing. Free collection & delivery on orders over £25.",
+    "pricingTitle": "Clear & Transparent Pricing",
+    "pricingIntro": "Professional cleaning and laundry services at clear, competitive prices.",
     "pricingFooter": "Need something not listed?",
     "bookingEyebrow": "Book a collection",
-    "bookingTitle": "Let's take it from here.",
+    "bookingTitle": "Book Your Collection",
     "bookingIntro": "Tell us where and when. Drop a pin for the exact pickup spot — we'll confirm within the hour.",
     "stats": [
-      { "value": "20+", "label": "Years of experience" },
-      { "value": "5 days", "label": "Open Mon–Fri" },
-      { "value": "4.9★", "label": "Customer rated" }
+      { "value": "20+", "label": "YEARS EXPERIENCE" },
+      { "value": "OPEN", "label": "5 DAYS A WEEK" },
+      { "value": "4.9★", "label": "CUSTOMER RATING" }
     ]
   },
   "steps": [
-    { "title": "Schedule", "body": "Book a collection online, via WhatsApp, or give us a call. Same-day slots available across Leicester and surrounding areas." },
-    { "title": "We collect", "body": "Our van arrives at your door. Hand over your garments in anything — we supply the rest. Free on orders over £25." },
-    { "title": "We care", "body": "Every item is inspected and treated using the latest machines and professional detergents at our Leicester facility." },
-    { "title": "We return", "body": "Freshly cleaned, pressed and wrapped — delivered back at a time that suits you. Fast, reliable and hassle free." }
+    { "title": "BOOK YOUR COLLECTION", "body": "Book online, by WhatsApp or by phone and choose a convenient collection time." },
+    { "title": "WE COLLECT", "body": "We collect your clothes directly from your home or business." },
+    { "title": "WE CLEAN & CARE", "body": "Every item is inspected, cleaned using the appropriate process and professionally finished." },
+    { "title": "WE DELIVER", "body": "Your freshly cleaned and finished items are returned to your door." }
   ],
   "services": [
-    { "num": "01", "title": "Dry Cleaning", "body": "Gentle care for suits, dresses, coats and more. Every item is inspected, pre-treated and finished by hand." },
-    { "num": "02", "title": "Wash, Dry & Fold", "body": "Everyday laundry service for everyday clothes. Washed, dried, folded and ready to wear." },
-    { "num": "03", "title": "Ironing & Pressing", "body": "Perfectly pressed ironing service, ready to wear. Crisp shirts, sharp trousers, every time." },
-    { "num": "04", "title": "Duvets & Bedding", "body": "Deep clean for duvets, pillows and bedding. Fresh sheets without the hassle." },
-    { "num": "05", "title": "Curtains & Household Items", "body": "We clean curtains with care and precision, plus tablecloths, towels and other household textiles." },
-    { "num": "06", "title": "Wedding Dress Cleaning", "body": "Specialist cleaning to keep your memories perfect. Preserved and boxed with care." },
-    { "num": "07", "title": "Alterations & Repairs", "body": "Expert alterations for the perfect fit. Hems, resizing and small repairs handled in-house." },
-    { "num": "08", "title": "Commercial Laundry", "body": "Hotels, restaurants, Airbnb, spas, salons and more. Reliable high-volume care billed by the kilo." },
-    { "num": "09", "title": "Bag & Shoe Cleaning", "body": "Professional care for your bags and shoes. Restored and refreshed." }
+    { "num": "01", "slug": "dry-cleaning", "title": "Dry Cleaning", "body": "Gentle care for suits, dresses, coats and more. Every item is inspected, pre-treated and finished by hand.", "includes": "Pre-spotting, gentle eco-cleaning, hand pressing and protective packaging.", "suitableFor": "Suits, silk, wool, cashmere, coats and delicate garments.", "turnaround": "24 - 48 hours", "price": "From £5.00" },
+    { "num": "02", "slug": "laundry", "title": "Wash, Dry & Fold", "body": "Everyday laundry service for everyday clothes. Washed, dried, folded and ready to wear.", "includes": "Professional wash with eco-friendly detergents, tumble dry and neat folding.", "suitableFor": "Everyday clothing, t-shirts, jeans, gym wear, children's clothes.", "turnaround": "24 hours", "price": "From £15.00 per load" },
+    { "num": "03", "slug": "ironing", "title": "Ironing & Pressing", "body": "Perfectly pressed ironing service, ready to wear. Crisp shirts, sharp trousers, every time.", "includes": "Professional hand pressing or steam finishing depending on fabric type.", "suitableFor": "Shirts, trousers, dresses, blouses, bed sheets.", "turnaround": "24 - 48 hours", "price": "From £2.00 per item" },
+    { "num": "04", "slug": "bedding", "title": "Duvets & Bedding", "body": "Deep clean for duvets, pillows and bedding. Fresh sheets without the hassle.", "includes": "Deep cleaning, allergen removal and packaging.", "suitableFor": "Duvets (all sizes/tog), pillows, bed sheets, mattress protectors.", "turnaround": "3 - 5 days", "price": "From £15.00" },
+    { "num": "05", "slug": "curtains", "title": "Curtains & Household Items", "body": "We clean curtains with care and precision, plus tablecloths, towels and other household textiles.", "includes": "Careful measurement, deep cleaning, pressing and folding/hanging.", "suitableFor": "Curtains, blinds, rugs, tablecloths, large towels.", "turnaround": "5 - 7 days", "price": "From £30.00" },
+    { "num": "06", "slug": "wedding-dress", "title": "Wedding Dress Cleaning", "body": "Specialist cleaning to keep your memories perfect. Preserved and boxed with care.", "includes": "Inspection, specialist delicate cleaning, minor repairs and preservation boxing.", "suitableFor": "Wedding dresses, bridesmaid dresses, formal gowns.", "turnaround": "2 - 4 weeks", "price": "From £95.00" },
+    { "num": "07", "slug": "alterations", "title": "Alterations & Repairs", "body": "Expert alterations for the perfect fit. Hems, resizing and small repairs handled in-house.", "includes": "Pinning/measuring (if applicable), professional tailoring and finishing.", "suitableFor": "Trousers, dresses, suits, zip replacements, button repairs.", "turnaround": "3 - 7 days", "price": "From £10.00" },
+    { "num": "08", "slug": "commercial", "title": "Commercial Laundry", "body": "Hotels, restaurants, Airbnb, spas, salons and more. Reliable high-volume care billed by the kilo.", "includes": "High-temperature wash, automated ironing, flat-folding and regular collection.", "suitableFor": "Hotels, Airbnbs, restaurants, gyms, spas.", "turnaround": "Regular scheduled service", "price": "From £3.50 per kg" },
+    { "num": "09", "slug": "bag-shoe", "title": "Bag & Shoe Cleaning", "body": "Professional care for your bags and shoes. Restored and refreshed.", "includes": "Deep cleaning, leather conditioning, stain removal and deodorizing.", "suitableFor": "Trainers, leather shoes, suede, handbags, luxury items.", "turnaround": "7 - 10 days", "price": "From £25.00" }
   ],
   "catalogue": [
     {
@@ -107,15 +107,15 @@
       "note": "Limited time deals",
       "wide": true,
       "items": [
-        { "name": "3 Garments Dry Cleaned", "price": "£18", "feature": true },
-        { "name": "25% Off Curtain Cleaning", "price": "25% off" },
-        { "name": "20% Off First Order", "sub": "Use code SUPER20", "price": "20% off", "feature": true }
+        { "name": "3 Garments Dry Cleaned", "price": "£18", "feature": true, "validity": "Valid until end of month", "terms": "Excludes leather and suede." },
+        { "name": "25% Off Curtain Cleaning", "price": "25% off", "validity": "Valid until end of month", "terms": "Minimum order £30." },
+        { "name": "20% Off First Order", "sub": "Use code SUPER20", "price": "20% off", "feature": true, "validity": "Ongoing", "terms": "New customers only. Max discount £20." }
       ]
     }
   ],
   "about": {
-    "title": "We care for your clothes like they're our own.",
-    "intro": "Super Dry Cleaners has proudly served Leicester and surrounding areas since 2005. We combine the latest machines with professional detergents to deliver premium quality at affordable prices.",
+    "title": "Professional Laundry & Dry Cleaning Since 2005",
+    "intro": "Since 2005, Super Dry Cleaners has provided professional dry cleaning, laundry and garment care services to customers across Leicester and surrounding areas.",
     "story": [
       "Super Dry Cleaners began with a simple idea: professional garment care shouldn't be complicated or expensive. Since 2005, we've grown into Leicester's trusted choice for dry cleaning, laundry and specialist cleaning — serving homes and businesses alike.",
       "Today we handle everything from everyday wash-and-fold to wedding dress preservation and commercial linen. Our team pays attention to detail, uses eco-friendly products wherever possible, and treats every item as if it were our own."

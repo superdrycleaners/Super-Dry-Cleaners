@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import AnimatedText from '@/components/site/AnimatedText';
 import Reveal from '@/components/site/Reveal';
 
@@ -20,13 +21,16 @@ export default function HeroContent({ brand, home }) {
   return (
     <div className="hero__content-wrapper">
       <div className="hero__image-wrapper">
-        <img
+        <Image
           src="/hero-image-sd.jpeg"
           alt={brand?.name || 'Super Dry Cleaners'}
           className="hero__image"
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
         />
         <div className="hero__loved-badge">
-          <span>💙</span> LOVED BY {brand?.name?.toUpperCase() || 'SUPER DRY CLEANERS'}
+          TRUSTED BY CUSTOMERS ACROSS LEICESTER
         </div>
       </div>
 
@@ -48,32 +52,15 @@ export default function HeroContent({ brand, home }) {
           <Reveal as="p" className="hero__lede" delay={0.6}>{home.lede}</Reveal>
 
           <Reveal className="hero__actions" delay={0.7}>
-            <motion.a
-              href="#book"
-              className="btn btn--solid"
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(26, 95, 180, 0.4)" }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <a href="#book" className="btn btn--solid">
               {home.ctaBooking || 'Book Collection'}
-            </motion.a>
-            <motion.a
-              href="#pricing"
-              className="btn btn--ghost"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            </a>
+            <a href="/pricing" className="btn btn--ghost">
               {home.ctaPricing || 'View Pricing'}
-            </motion.a>
-            <motion.a
-              href={`https://wa.me/${brand?.whatsapp || '447889693265'}`}
-              className="btn btn--whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(37, 211, 102, 0.4)" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {home.ctaWhatsapp || 'WhatsApp Us'}
-            </motion.a>
+            </a>
+            <a href={`https://wa.me/${brand?.whatsapp || '447889693265'}`} className="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
+              CALL US / WHATSAPP US
+            </a>
           </Reveal>
 
           {home.stats && (

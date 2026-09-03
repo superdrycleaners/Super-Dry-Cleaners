@@ -29,6 +29,12 @@ export default async function PricingPage() {
           <Reveal as="p" className="cat__foot" style={{ marginTop: '5rem', textAlign: 'center', fontSize: '1.1rem', color: 'var(--ink-soft)' }}>
             {home.pricingFooter || 'Need something not listed?'} <a href="/#book" style={{ color: 'var(--teal)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '4px' }}>Ask us for a quote →</a>
           </Reveal>
+          
+          <Reveal as="div" style={{ marginTop: '3rem', textAlign: 'center' }}>
+            <a href="/#book" className="btn btn--solid btn--large">
+              BOOK A COLLECTION
+            </a>
+          </Reveal>
         </div>
       </section>
     </main>

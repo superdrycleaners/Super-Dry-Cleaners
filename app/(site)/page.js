@@ -81,9 +81,12 @@ export default async function HomePage() {
               {home.pricingIntro || 'Transparent, itemised pricing. Free collection & delivery on orders over £25.'}
             </p>
           </Reveal>
-          <Reveal>
-            <Link href="/pricing" className="btn btn--solid btn--large">
-              Explore our Catalogue/Pricing
+          <Reveal as="div" style={{ marginTop: '2rem', textAlign: 'center' }}>
+            <Link href="/pricing" className="btn btn--ghost btn--large" style={{ marginRight: '1rem' }}>
+              Explore our Catalogue &amp; Pricing
+            </Link>
+            <Link href="/#book" className="btn btn--solid btn--large">
+              BOOK A COLLECTION
             </Link>
           </Reveal>
         </div>

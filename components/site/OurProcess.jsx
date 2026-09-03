@@ -39,7 +39,7 @@ export default function OurProcess() {
     {
       id: 4,
       title: "Woolmark Approved",
-      desc: "Our water-based process is exceptionally delicate, making it fully safe for fine silks, cashmere, and wools.",
+      desc: "Our cleaning process is exceptionally delicate, providing careful cleaning for fine silks, cashmere, and wools.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
@@ -60,7 +60,7 @@ export default function OurProcess() {
     {
       id: 6,
       title: "Flawless Finish",
-      desc: "Your clothes emerge beautifully clean with minimal creases, ready to wear in under one hour.",
+      desc: "Your clothes emerge beautifully clean with minimal creases, ready to wear.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -74,9 +74,9 @@ export default function OurProcess() {
       <div className="container">
         <Reveal as="header" className="section__head section__head--center">
           <p className="eyebrow">Super Dry Cleaners</p>
-          <h2 className="section__title">Our Process: Fast, Easy & Green</h2>
+          <h2 className="section__title">Our Cleaning Process</h2>
           <p className="section__intro">
-            Experience the future of garment care. Our revolutionary, eco-friendly wet-cleaning system delivers spotless results without harsh toxic solvents.
+            Experience professional garment care. Our eco-friendly system delivers spotless results without harsh toxic solvents.
           </p>
         </Reveal>
         

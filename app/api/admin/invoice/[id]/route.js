@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { jsPDF } from 'jspdf';
-import { requireSession } from '@/lib/session';
+import { getSession } from '@/lib/session';
 import { getOrder } from '@/lib/data/orders';
 import { getContentSection } from '@/lib/data/content';
 
@@ -19,7 +19,10 @@ const LIGHT_BG = [244, 246, 251];
  * Requires an authenticated admin session.
  */
 export async function GET(_request, { params }) {
-  requireSession();
+  const session = getSession();
+  if (!session) {
+    return NextResponse.json({ error: 'Unauthorised. Please sign in.' }, { status: 401 });
+  }
 
   const { id } = params;
   const order = await getOrder(id);

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { requireSession } from '@/lib/session';
+import { getSession } from '@/lib/session';
 import { createOrder } from '@/lib/data/orders';
 
 /**
@@ -9,7 +9,10 @@ import { createOrder } from '@/lib/data/orders';
  * admin session. Returns the created order with its generated ID.
  */
 export async function POST(request) {
-  requireSession();
+  const session = getSession();
+  if (!session) {
+    return NextResponse.json({ error: 'Unauthorised. Please sign in.' }, { status: 401 });
+  }
 
   let body;
   try {

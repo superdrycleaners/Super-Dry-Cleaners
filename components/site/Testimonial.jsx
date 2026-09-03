@@ -66,7 +66,7 @@ const Testimonial = ({ testimonials }) => {
     <section className="testimonials-section">
       <div className="container">
         <div className="testimonials__header">
-          <p className="eyebrow">What our customers say</p>
+          <p className="eyebrow">What Our Customers Say</p>
           <h2 className="section__title">Trusted by Leicester</h2>
         </div>
 
@@ -119,6 +119,10 @@ const Testimonial = ({ testimonials }) => {
             </button>
           </div>
         )}
+
+        {/* <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <a href="#reviews" className="btn btn--ghost">READ MORE REVIEWS</a>
+        </div> */}
       </div>
     </section>
   );

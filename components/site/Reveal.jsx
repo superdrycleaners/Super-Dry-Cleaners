@@ -18,13 +18,13 @@ const Reveal = ({ children, as = 'div', className = '', delay = 0, ...otherProps
 
   return (
     <Tag
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -40px 0px", amount: 0.12 }}
       transition={{ 
-        duration: 0.7, 
+        duration: 0.5, 
         delay, 
-        ease: [0.16, 1, 0.3, 1] 
+        ease: 'easeOut' 
       }}
       className={className}
       {...otherProps}

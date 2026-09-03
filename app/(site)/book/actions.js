@@ -66,9 +66,11 @@ export async function submitBooking(_prevState, formData) {
     appliedOffer = couponResult.offer;
   }
 
-  // Create the order with discount info if applicable
   const orderData = {
     ...result.data,
+    // notes stays as-is (user's access notes only - e.g. gate code, concierge)
+    // quantity and deliveryPreference are passed through result.data directly
+    // and stored in their own dedicated Supabase columns
     ...(appliedOffer && {
       couponCode: appliedOffer.code,
       discountType: appliedOffer.type,
@@ -96,7 +98,7 @@ export async function submitBooking(_prevState, formData) {
 
   return {
     ok: true,
-    message: `Thank you, ${order.name.split(' ')[0]}. Your collection is requested for ${order.date}, ${order.slot}. We'll confirm within the hour.${appliedOffer ? ` Offer "${appliedOffer.label}" applied!` : ''}`,
+    message: 'Thank you. Your collection request has been received. We will contact you shortly to confirm your collection time.',
     order: { id: order.id, date: order.date, slot: order.slot },
   };
 }

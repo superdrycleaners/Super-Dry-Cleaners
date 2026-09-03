@@ -33,10 +33,12 @@ const AreasServed = () => (
   <section className="section">
     <div className="container">
       <Reveal as="header" className="section__head section__head--center">
-        <p className="eyebrow">Areas we serve</p>
-        <h2 className="section__title">Covering Leicester &amp; beyond.</h2>
-        <p className="section__intro">
-          Free collection and delivery on orders over £25 across all these areas and more.
+        <h2 className="section__title">Convenient Collection &amp; Delivery</h2>
+        <p className="section__intro" style={{ marginBottom: '1.5rem' }}>
+          We collect and deliver your laundry and dry cleaning directly to your door across Leicester and surrounding areas.
+        </p>
+        <p className="eyebrow" style={{ color: 'var(--teal)', fontSize: '1.1rem', fontWeight: 600 }}>
+          FREE COLLECTION &amp; DELIVERY ON ORDERS OVER £25
         </p>
       </Reveal>
       <Reveal className="areas">
