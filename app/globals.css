@@ -19,8 +19,8 @@
   --dark: #0a1f44;
   --danger: #c0603f;
 
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-body: var(--font-manrope), "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
 
   --wrap: 1180px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -960,16 +960,26 @@ ol {
   color: var(--dark);
 }
 .testimonials__dot {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonials__dot::before {
+  content: '';
   width: 10px;
   height: 10px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.4);
   background: transparent;
-  cursor: pointer;
   transition: all 0.2s ease;
-  padding: 0;
 }
-.testimonials__dot.is-active {
+.testimonials__dot.is-active::before {
   background: var(--brass);
   border-color: var(--brass);
   transform: scale(1.2);
@@ -1303,7 +1313,7 @@ ol {
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--brass);
+  color: var(--teal);
   font-weight: 600;
   margin-bottom: 0.3rem;
 }

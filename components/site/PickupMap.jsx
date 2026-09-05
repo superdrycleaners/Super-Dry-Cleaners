@@ -55,8 +55,9 @@ const PickupMap = ({ onPick, onGeocode }) => {
       }
     }
 
-    // Dynamically load Leaflet in the browser only.
+    // Dynamically load Leaflet and its CSS in the browser only.
     async function init() {
+      await import('leaflet/dist/leaflet.css');
       const L = (await import('leaflet')).default;
       if (cancelled || !containerRef.current || mapRef.current) return;
 

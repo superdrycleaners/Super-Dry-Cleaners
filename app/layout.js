@@ -1,7 +1,23 @@
+import { Cormorant_Garamond, Manrope } from 'next/font/google';
 import './globals.css';
 
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+});
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-manrope',
+  display: 'swap',
+});
+
 /**
- * Root layout: loads fonts and Leaflet's stylesheet, and sets site metadata.
+ * Root layout: loads fonts and sets site metadata.
  * Applies to every route, including the admin area.
  */
 export const metadata = {
@@ -35,21 +51,8 @@ export const metadata = {
  */
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap"
-          rel="stylesheet"
-        />
-        {/* Leaflet marker/control styles for the booking map */}
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-          crossOrigin="anonymous"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

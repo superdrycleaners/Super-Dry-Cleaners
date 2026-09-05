@@ -1,18 +1,19 @@
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { getContent, getContentSection } from '@/lib/data/content';
 import Reveal from '@/components/site/Reveal';
 import Marquee from '@/components/site/Marquee';
 import Steps from '@/components/site/Steps';
-import ServiceCards from '@/components/site/ServiceCards';
-import Catalogue from '@/components/site/Catalogue';
 import SpecialOffers from '@/components/site/SpecialOffers';
-import WhyChooseUs from '@/components/site/WhyChooseUs';
-import AreasServed from '@/components/site/AreasServed';
-import Testimonial from '@/components/site/Testimonial';
-import BookingForm from '@/components/site/BookingForm';
-import OurProcess from '@/components/site/OurProcess';
 import HeroContent from '@/components/site/HeroContent';
 import FloatingLeaves from '@/components/site/FloatingLeaves';
+
+const OurProcess = dynamic(() => import('@/components/site/OurProcess'));
+const ServiceCards = dynamic(() => import('@/components/site/ServiceCards'));
+const WhyChooseUs = dynamic(() => import('@/components/site/WhyChooseUs'));
+const Testimonial = dynamic(() => import('@/components/site/Testimonial'), { ssr: false });
+const AreasServed = dynamic(() => import('@/components/site/AreasServed'));
+const BookingForm = dynamic(() => import('@/components/site/BookingForm'), { ssr: false });
 
 /**
  * Single-page layout: all content on one scrolling page with anchor sections.

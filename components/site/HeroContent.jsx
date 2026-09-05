@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import AnimatedText from '@/components/site/AnimatedText';
 import Reveal from '@/components/site/Reveal';
@@ -28,6 +27,8 @@ export default function HeroContent({ brand, home }) {
           fill
           style={{ objectFit: 'cover' }}
           priority
+          sizes="(max-width: 768px) 100vw, 50vw"
+          quality={80}
         />
         <div className="hero__loved-badge">
           TRUSTED BY CUSTOMERS ACROSS LEICESTER
