@@ -10,7 +10,7 @@ const LINKS = [
   { href: '/#home', label: 'Home', sectionId: 'home' },
   { href: '/eco', label: 'Eco', isPage: true },
   { href: '/#services', label: 'Services', sectionId: 'services' },
-  { href: '/#pricing', label: 'Pricing', sectionId: 'pricing' },
+  { href: '/pricing', label: 'Pricing', sectionId: 'pricing' },
   { href: '/#about', label: 'About', sectionId: 'about' },
 ];
 
