@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS orders (
   status TEXT NOT NULL DEFAULT 'pending',
   items JSONB DEFAULT '[]'::jsonb,
   total INTEGER DEFAULT 0,
+  email_sent BOOLEAN DEFAULT FALSE,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
@@ -70,8 +71,10 @@ CREATE POLICY "Service role full access on coupon_redemptions"
   USING (true)
   WITH CHECK (true);
 
--- Add coupon fields to orders table
+-- Add coupon & email tracking fields to orders table
 ALTER TABLE orders ADD COLUMN IF NOT EXISTS coupon_code TEXT;
 ALTER TABLE orders ADD COLUMN IF NOT EXISTS discount_type TEXT;
 ALTER TABLE orders ADD COLUMN IF NOT EXISTS discount_value INTEGER DEFAULT 0;
 ALTER TABLE orders ADD COLUMN IF NOT EXISTS discount_label TEXT;
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS email_sent BOOLEAN DEFAULT FALSE;
+

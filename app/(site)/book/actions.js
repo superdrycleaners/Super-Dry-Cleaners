@@ -2,7 +2,7 @@
 
 import { headers } from 'next/headers';
 import { validateBooking } from '@/lib/validation';
-import { createOrder } from '@/lib/data/orders';
+import { createOrder, updateOrderEmailSent } from '@/lib/data/orders';
 import { validateCoupon, recordRedemption } from '@/lib/data/coupons';
 import { sendBookingConfirmation, sendAdminNotification } from '@/lib/email';
 import { getClientIp, checkBookingRateLimit } from '@/lib/rate-limit';
@@ -92,8 +92,17 @@ export async function submitBooking(_prevState, formData) {
     });
   }
 
-  // Send confirmation emails (non-blocking — don't fail the booking if email fails)
-  sendBookingConfirmation(order).catch(() => {});
+  // Send confirmation emails (non-blocking — update email_sent flag based on result)
+  (async () => {
+    try {
+      const emailSent = await sendBookingConfirmation(order);
+      await updateOrderEmailSent(order.id, Boolean(emailSent));
+    } catch (err) {
+      console.error('[BookingAction] Failed sending confirmation email:', err);
+      await updateOrderEmailSent(order.id, false).catch(() => {});
+    }
+  })();
+
   sendAdminNotification(order).catch(() => {});
 
   return {
