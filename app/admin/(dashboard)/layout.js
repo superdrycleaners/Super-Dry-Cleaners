@@ -24,7 +24,7 @@ export default function AdminLayout({ children }) {
     <div data-admin-ui="true" className="admin admin--topnav">
       <header className="admin__topbar">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/Frame 34.svg" alt="Super Dry Cleaners" className="admin__topbar-logo" />
+        <img src="/Frame 34.svg" alt="SuperDryCleaners" className="admin__topbar-logo" />
         <div className="admin__topbar-right">
           <AdminNav />
           <span className="admin__user">{session.sub}</span>

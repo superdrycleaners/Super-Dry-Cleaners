@@ -2,7 +2,7 @@
   "name": "super-dry-cleaners",
   "version": "1.0.0",
   "private": true,
-  "description": "Super Dry Cleaners — Leicester premium laundry & dry cleaning: marketing site, CMS and orders dashboard.",
+  "description": "Super Dry Cleaners — Leicester laundry & dry cleaning: marketing site, CMS and orders dashboard.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

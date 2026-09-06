@@ -1,7 +1,7 @@
 import { getContent } from '@/lib/data/content';
 import VisualPageEditor from '@/components/admin/VisualPageEditor';
 
-export const metadata = { title: 'Content (CMS) — Super Dry Cleaners Admin' };
+export const metadata = { title: 'Content (CMS) — SuperDryCleaners Admin' };
 
 export const dynamic = 'force-dynamic';
 

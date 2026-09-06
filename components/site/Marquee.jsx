@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 /** Words shown in the scrolling hero marquee. */
 const WORDS = [
   'Dry Cleaning',
-  'Wash & Fold',
+  'Wash & Fine',
   'Ironing',
   'Duvets & Bedding',
   'Wedding Dresses',
@@ -24,7 +24,7 @@ const Marquee = () => {
 
   return (
     <div className="marquee" aria-hidden="true">
-      <motion.div 
+      <motion.div
         className="marquee__track"
         animate={{ x: [0, "-50%"] }}
         transition={{

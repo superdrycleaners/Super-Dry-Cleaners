@@ -50,7 +50,7 @@ export async function POST(_request, { params }) {
   doc.setTextColor(...WHITE);
   doc.setFontSize(20);
   doc.setFont('helvetica', 'bold');
-  doc.text('SUPER DRY CLEANERS', margin, 18);
+  doc.text('SuperDryCleaners', margin, 18);
   doc.setFontSize(8);
   doc.setFont('helvetica', 'normal');
   doc.text('LAUNDRY SERVICES · SINCE 2005', margin, 26);
@@ -170,7 +170,7 @@ export async function POST(_request, { params }) {
   doc.setTextColor(...SOFT_TEXT);
   doc.setFontSize(7);
   doc.setFont('helvetica', 'normal');
-  doc.text('Thank you for choosing Super Dry Cleaners.', pageWidth / 2, 276, { align: 'center' });
+  doc.text('Thank you for choosing SuperDryCleaners.', pageWidth / 2, 276, { align: 'center' });
 
   const pdfBuffer = Buffer.from(doc.output('arraybuffer'));
 

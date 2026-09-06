@@ -5,7 +5,7 @@ import CountUp from '@/components/site/CountUp';
 import { getContentSection } from '@/lib/data/content';
 
 export const metadata = {
-  title: 'Eco-Friendly Cleaning — Super Dry Cleaners Leicester',
+  title: 'Eco-Friendly Cleaning — SuperDryCleaners Leicester',
   description:
     'We use Electrolux lagoon® Advanced Care — the world\'s most advanced water-based, chemical-free professional textile cleaning system. Fast, gentle, and genuinely green.',
 };

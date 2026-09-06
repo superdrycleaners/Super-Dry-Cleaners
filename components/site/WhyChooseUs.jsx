@@ -44,7 +44,7 @@ const WhyChooseUs = () => (
     <div className="container">
       <Reveal as="header" className="section__head section__head--center">
         <p className="eyebrow">Why choose us</p>
-        <h2 className="section__title">The Super Dry Cleaners difference.</h2>
+        <h2 className="section__title">The SuperDryCleaners difference.</h2>
       </Reveal>
       <div className="grid grid--reasons">
         {REASONS.map((reason) => (

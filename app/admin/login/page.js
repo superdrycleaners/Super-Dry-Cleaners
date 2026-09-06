@@ -6,7 +6,7 @@ import '../admin.css';
 import '../admin-ui.css';
 
 export const metadata = {
-  title: 'Admin sign in — Super Dry Cleaners',
+  title: 'Admin sign in — SuperDryCleaners',
 };
 
 /**
@@ -25,7 +25,7 @@ export default function AdminLoginPage() {
         <Card.Header className="login__header">
           <div className="login__brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/Frame 34.svg" alt="Super Dry Cleaners — Laundry Services Since 2005" className="login__brand-logo" />
+            <img src="/Frame 34.svg" alt="SuperDryCleaners — Laundry Services Since 2005" className="login__brand-logo" />
           </div>
           <Card.Title as="h1" id="admin-login-title">
             Admin sign in

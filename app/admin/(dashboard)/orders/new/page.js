@@ -3,7 +3,7 @@ import { getContentSection } from '@/lib/data/content';
 import Card from '@/components/admin/ui/Card';
 import CreateOrderForm from '@/components/admin/CreateOrderForm';
 
-export const metadata = { title: 'New Order — Super Dry Cleaners Admin' };
+export const metadata = { title: 'New Order — SuperDryCleaners Admin' };
 export const dynamic = 'force-dynamic';
 
 /**

@@ -13,23 +13,23 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const content = await getContent();
   const service = content.services.find((s) => s.slug === params.slug);
-  
+
   if (!service) return { title: 'Service Not Found' };
-  
+
   return {
-    title: `${service.title} Services in Leicester | Super Dry Cleaners`,
+    title: `${service.title} Services in Leicester | SuperDryCleaners`,
     description: service.body,
     openGraph: {
-      title: `${service.title} Services in Leicester | Super Dry Cleaners`,
+      title: `${service.title} Services in Leicester | SuperDryCleaners`,
       description: service.body,
       url: `https://superdrycleaners.co.uk/services/${service.slug}`,
-      siteName: 'Super Dry Cleaners',
+      siteName: 'SuperDryCleaners',
       images: [
         {
           url: 'https://superdrycleaners.co.uk/hero-image-sd.jpeg',
           width: 1200,
           height: 630,
-          alt: `${service.title} - Super Dry Cleaners Leicester`,
+          alt: `${service.title} - SuperDryCleaners Leicester`,
         },
       ],
       locale: 'en_GB',
@@ -63,7 +63,7 @@ export default async function ServicePage({ params }) {
                 <h3 style={{ fontSize: '1.2rem', color: 'var(--teal)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>What is Included</h3>
                 <p style={{ fontSize: '1.1rem', color: 'var(--ink)' }}>{service.includes}</p>
               </div>
-              
+
               <div>
                 <h3 style={{ fontSize: '1.2rem', color: 'var(--teal)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Suitable For</h3>
                 <p style={{ fontSize: '1.1rem', color: 'var(--ink)' }}>{service.suitableFor}</p>
@@ -80,14 +80,14 @@ export default async function ServicePage({ params }) {
                 </div>
               </div>
             </div>
-            
+
             <div style={{ marginTop: '3rem', textAlign: 'center' }}>
               <Link href="/#book" className="btn btn--solid btn--large" style={{ width: '100%', justifyContent: 'center' }}>
                 BOOK A COLLECTION
               </Link>
             </div>
           </Reveal>
-          
+
           <Reveal as="div" style={{ marginTop: '2rem', textAlign: 'center' }}>
             <Link href="/" style={{ color: 'var(--teal)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '4px' }}>
               &larr; Back to all services

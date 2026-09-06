@@ -27,7 +27,7 @@ export default function OurProcess() {
     {
       id: 3,
       title: "Gentle Water Wash",
-      desc: "Our PERC-free system uses ProV'tex technology to give your clothes a highly effective, gentle 'water cuddle.'",
+      desc: "Our PERC-free system uses ProV'tex technology to give your clothes a highly effective, gentle",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M2 12h4l2-2 4 4 4-4 2 2h4"></path>
@@ -38,19 +38,8 @@ export default function OurProcess() {
     },
     {
       id: 4,
-      title: "Woolmark Approved",
-      desc: "Our cleaning process is exceptionally delicate, providing careful cleaning for fine silks, cashmere, and wools.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
-          <path d="M8 11l3 3 5-5"></path>
-        </svg>
-      )
-    },
-    {
-      id: 5,
       title: "Smart Drying",
-      desc: "Garments dry fully inside the machine—protecting the fabric surface and eliminating hang-dry time.",
+      desc: "Garments dry fully inside the machine - helping protect the fabric and maintain its finish, eliminating hang-dry time.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
@@ -58,7 +47,7 @@ export default function OurProcess() {
       )
     },
     {
-      id: 6,
+      id: 5,
       title: "Flawless Finish",
       desc: "Your clothes emerge beautifully clean with minimal creases, ready to wear.",
       icon: (
@@ -73,20 +62,20 @@ export default function OurProcess() {
     <section className="section" id="eco-process" style={{ background: 'var(--mist)' }}>
       <div className="container">
         <Reveal as="header" className="section__head section__head--center">
-          <p className="eyebrow">Super Dry Cleaners</p>
+          <p className="eyebrow">SuperDryCleaners</p>
           <h2 className="section__title">Our Cleaning Process</h2>
           <p className="section__intro">
             Experience professional garment care. Our eco-friendly system delivers spotless results without harsh toxic solvents.
           </p>
         </Reveal>
-        
+
         <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
           {steps.map((step) => (
             <Reveal className="card" key={step.id} style={{ display: 'flex', flexDirection: 'column', padding: '2.5rem 2rem', position: 'relative', overflow: 'hidden' }}>
               {/* Decorative Gradients */}
               <div style={{ position: 'absolute', top: '-15%', right: '-15%', width: '150px', height: '150px', background: 'radial-gradient(circle, rgba(201,169,78,0.12) 0%, transparent 70%)', borderRadius: '50%', pointerEvents: 'none' }}></div>
               <div style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '120px', height: '120px', background: 'radial-gradient(circle, rgba(26,95,180,0.06) 0%, transparent 70%)', borderRadius: '50%', pointerEvents: 'none' }}></div>
-              
+
               {/* Header: Icon & Step Number */}
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', zIndex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '50px', height: '50px', borderRadius: '12px', background: 'var(--mist-deep)', color: 'var(--teal)', border: '1px solid var(--line)' }}>

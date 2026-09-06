@@ -21,20 +21,20 @@ const manrope = Manrope({
  * Applies to every route, including the admin area.
  */
 export const metadata = {
-  title: 'Dry Cleaning & Laundry Services Leicester | Super Dry Cleaners',
+  title: 'Dry Cleaning & Laundry Services Leicester | SuperDryCleaners',
   description:
     'Professional dry cleaning, laundry, ironing and specialist cleaning services in Leicester. Convenient collection and delivery for homes and businesses.',
   openGraph: {
-    title: 'Dry Cleaning & Laundry Services Leicester | Super Dry Cleaners',
+    title: 'Dry Cleaning & Laundry Services Leicester | SuperDryCleaners',
     description: 'Professional dry cleaning, laundry, ironing and specialist cleaning services in Leicester. Convenient collection and delivery for homes and businesses.',
     url: 'https://superdrycleaners.co.uk',
-    siteName: 'Super Dry Cleaners',
+    siteName: 'SuperDryCleaners',
     images: [
       {
         url: 'https://superdrycleaners.co.uk/hero-image-sd.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Super Dry Cleaners Leicester',
+        alt: 'SuperDryCleaners Leicester',
       },
     ],
     locale: 'en_GB',
@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "DryCleaningOrLaundry",
-              name: "Super Dry Cleaners",
+              name: "SuperDryCleaners",
               image: "https://superdrycleaners.co.uk/hero-image-sd.jpeg",
               "@id": "https://superdrycleaners.co.uk",
               url: "https://superdrycleaners.co.uk",

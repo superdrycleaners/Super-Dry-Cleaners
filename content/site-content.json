@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "Super Dry Cleaners",
+    "name": "SuperDryCleaners",
     "email": "info@superdrycleaners.co",
     "phone": "07889 693265",
     "phoneHref": "+447889693265",
@@ -8,7 +8,7 @@
     "whatsapp": "447889693265",
     "website": "superdrycleaners.co",
     "address": "Unit 4, Patel Lane, Leicester LE1 4EY",
-    "tagline": "Leicester's premium dry cleaning & laundry service since 2005.",
+    "tagline": "Leicester's dry cleaning & laundry service since 2005.",
     "footerText": "We care for your clothes like they're our own.",
     "copyright": "All rights reserved.",
     "openingHours": "Monday – Friday, 9:00am – 6:00pm",
@@ -35,7 +35,7 @@
     "pricingFooter": "Need something not listed?",
     "bookingEyebrow": "Book a collection",
     "bookingTitle": "Book Your Collection",
-    "bookingIntro": "Tell us where and when. Drop a pin for the exact pickup spot — we'll confirm within the hour.",
+    "bookingIntro": "Tell us where and when. Drop a pin for the exact collection address - We'll confirm within the hour.",
     "stats": [
       { "value": "20+", "label": "YEARS EXPERIENCE" },
       { "value": "OPEN", "label": "5 DAYS A WEEK" },
@@ -115,16 +115,16 @@
   ],
   "about": {
     "title": "Professional Laundry & Dry Cleaning Since 2005",
-    "intro": "Since 2005, Super Dry Cleaners has provided professional dry cleaning, laundry and garment care services to customers across Leicester and surrounding areas.",
+    "intro": "Since 2005, SuperDryCleaners has provided professional dry cleaning, laundry and garment care services to customers across Leicester and surrounding areas.",
     "story": [
-      "Super Dry Cleaners began with a simple idea: professional garment care shouldn't be complicated or expensive. Since 2005, we've grown into Leicester's trusted choice for dry cleaning, laundry and specialist cleaning — serving homes and businesses alike.",
+      "SuperDryCleaners began with a simple idea: professional garment care shouldn't be complicated or expensive. Since 2005, we've grown into Leicester's trusted choice for dry cleaning, laundry and specialist cleaning — serving homes and businesses alike.",
       "Today we handle everything from everyday wash-and-fold to wedding dress preservation and commercial linen. Our team pays attention to detail, uses eco-friendly products wherever possible, and treats every item as if it were our own."
     ],
     "features": [
       { "title": "Free collection & delivery", "body": "Complimentary pickup and return on all orders over £25, across Leicester and surrounding areas." },
-      { "title": "Eco-friendly products", "body": "We use environmentally responsible detergents and processes that protect fabric and planet alike." },
+      { "title": "Eco-friendly products", "body": "We use environmentally responsible detergents and processes that protect your fabrics and the environment." },
       { "title": "Satisfaction guaranteed", "body": "If you're not happy, we'll re-clean it for free. No questions asked." },
-      { "title": "Latest machines", "body": "Professional-grade equipment and detergents for premium quality results every time." }
+      { "title": "Latest machines", "body": "Professional-grade equipment and detergents for quality results every time." }
     ]
   },
   "testimonials": [
@@ -139,7 +139,7 @@
       "location": "Oadby"
     },
     {
-      "quote": "I've used Super Dry Cleaners for my wedding dress and was blown away by the care they took. Highly recommend to anyone in Leicester.",
+      "quote": "I've used SuperDryCleaners for my wedding dress and was blown away by the care they took. Highly recommend to anyone in Leicester.",
       "author": "Satisfied Bride",
       "location": "Knighton"
     }

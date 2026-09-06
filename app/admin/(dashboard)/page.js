@@ -2,7 +2,7 @@ import { listOrders, getOrderStats, STATUS_LABELS } from '@/lib/data/orders';
 import OrdersTable from '@/components/admin/OrdersTable';
 import Card from '@/components/admin/ui/Card';
 
-export const metadata = { title: 'Dashboard — Super Dry Cleaners Admin' };
+export const metadata = { title: 'Dashboard — SuperDryCleaners Admin' };
 
 // Always render fresh so new orders and status changes show immediately.
 export const dynamic = 'force-dynamic';

@@ -22,7 +22,7 @@ export default function HeroContent({ brand, home }) {
       <div className="hero__image-wrapper">
         <Image
           src="/hero-image-sd.jpeg"
-          alt={brand?.name || 'Super Dry Cleaners'}
+          alt={brand?.name || 'SuperDryCleaners'}
           className="hero__image"
           fill
           style={{ objectFit: 'cover' }}

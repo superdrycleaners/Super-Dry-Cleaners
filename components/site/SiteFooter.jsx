@@ -14,8 +14,8 @@ const SiteFooter = ({ brand }) => {
       <div className="container footer__inner">
         <div className="footer__brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/Frame 32.svg" alt="Super Dry Cleaners" className="footer__brand-logo" width="180" height="108" />
-          <h3 style={{ fontSize: '1.2rem', marginTop: '1rem', marginBottom: '0.5rem', color: 'var(--ink)' }}>Super Dry Cleaners</h3>
+          <img src="/Frame 32.svg" alt="SuperDryCleaners" className="footer__brand-logo" width="180" height="108" />
+          <h3 style={{ fontSize: '1.2rem', marginTop: '1rem', marginBottom: '0.5rem', color: 'var(--ink)' }}>SuperDryCleaners</h3>
           <p>Professional Dry Cleaning &amp; Laundry Services in Leicester</p>
         </div>
         <nav className="footer__col" aria-label="Services">

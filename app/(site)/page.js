@@ -128,7 +128,7 @@ export default async function HomePage() {
             <p className="eyebrow">{home.bookingEyebrow || 'Book a collection'}</p>
             <h2 className="section__title">{home.bookingTitle || "Let's take it from here."}</h2>
             <p className="section__intro">
-              {home.bookingIntro || "Tell us where and when. Drop a pin for the exact pickup spot — we'll confirm within the hour."}
+              {home.bookingIntro || "Tell us where and when. Drop a pin for the exact collection address - We'll confirm within the hour."}
             </p>
           </Reveal>
           <BookingForm />

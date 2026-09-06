@@ -3,7 +3,7 @@ import { listOrders } from '@/lib/data/orders';
 import OrdersTable from '@/components/admin/OrdersTable';
 import Card from '@/components/admin/ui/Card';
 
-export const metadata = { title: 'Orders — Super Dry Cleaners Admin' };
+export const metadata = { title: 'Orders — SuperDryCleaners Admin' };
 
 // Always render fresh so status changes are reflected on reload.
 export const dynamic = 'force-dynamic';
