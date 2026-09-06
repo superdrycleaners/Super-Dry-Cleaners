@@ -72,7 +72,36 @@ const PickupMap = ({ onPick, onGeocode }) => {
         attribution: '&copy; OpenStreetMap contributors',
       }).addTo(map);
 
+      // Create custom SVG Map Pin icon using Lucide style pin
+      const pinIcon = L.divIcon({
+        className: 'custom-pickup-pin',
+        html: `
+          <div style="
+            width: 38px;
+            height: 38px;
+            background-color: #0a1f44;
+            border: 2.5px solid #ffffff;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+          ">
+            <svg style="transform: rotate(45deg); color: #ffffff; width: 20px; height: 20px; display: block;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+        `,
+        iconSize: [38, 38],
+        iconAnchor: [19, 38],
+        popupAnchor: [0, -38],
+      });
+
       const marker = L.marker([DEFAULT.lat, DEFAULT.lng], {
+        icon: pinIcon,
         draggable: true,
         autoPan: true,
         title: 'Drag me to your pickup location',

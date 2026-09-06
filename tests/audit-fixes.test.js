@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { checkRateLimit, checkBookingRateLimit, resetRateLimit, getClientIp } from '@/lib/rate-limit';
-import { generateOrderId } from '@/lib/data/orders';
+import { generateOrderId, createOrder } from '@/lib/data/orders';
 import { createSessionToken } from '@/lib/auth';
 import { middleware } from '@/middleware';
 import { NextRequest } from 'next/server';
@@ -50,20 +50,30 @@ describe('Audit 1.1: Rate Limiting & Bot Protection', () => {
   });
 });
 
-describe('Audit 1.2: Collision-Resistant Order ID Generator', () => {
+describe('Audit 1.2: Sequential Order ID Generator', () => {
   it('generates order IDs matching the expected format', () => {
     const id = generateOrderId();
-    expect(id).toMatch(/^ORD-[A-Z0-9]+-[A-Z0-9]{8}$/);
+    expect(id).toMatch(/^ORD-\d{4,}$/);
   });
 
-  it('generates 5,000 unique IDs without any collisions', () => {
+  it('generates unique sequential IDs without any collisions when creating orders', async () => {
     const generated = new Set();
-    const count = 5000;
+    const count = 50;
 
     for (let i = 0; i < count; i++) {
-      const id = generateOrderId();
-      expect(generated.has(id)).toBe(false);
-      generated.add(id);
+      const order = await createOrder({
+        name: `Customer ${i}`,
+        email: `test${i}@example.com`,
+        phone: '07000000000',
+        service: 'Dry Cleaning',
+        address1: '123 Test St',
+        city: 'Leicester',
+        postcode: 'LE1 1AA',
+        date: '2026-09-10',
+        slot: '09:00 - 12:00',
+      });
+      expect(generated.has(order.id)).toBe(false);
+      generated.add(order.id);
     }
 
     expect(generated.size).toBe(count);

@@ -2483,3 +2483,10 @@ ol {
     height: 42px;
   }
 }
+
+/* Custom Pickup Map Marker */
+.custom-pickup-pin {
+  background: transparent !important;
+  border: none !important;
+}
+
