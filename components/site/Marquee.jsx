@@ -5,13 +5,12 @@ import { motion } from 'framer-motion';
 /** Words shown in the scrolling hero marquee. */
 const WORDS = [
   'Dry Cleaning',
-  'Wash & Fine',
-  'Ironing',
+  'Wash, Dry & Fold',
+  'Ironing & Pressing',
   'Duvets & Bedding',
-  'Wedding Dresses',
+  'Wedding Dress Cleaning',
   'Commercial Laundry',
-  'Alterations',
-  'Free Collection',
+  'Alterations & Repairs'
 ];
 
 /**
