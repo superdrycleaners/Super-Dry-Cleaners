@@ -19,8 +19,8 @@ const REASONS = [
   },
   {
     icon: '💷',
-    title: 'Affordable Pricing',
-    body: 'Premium quality without the premium price tag. Honest, transparent pricing.',
+    title: 'Competitive Pricing',
+    body: 'Professional cleaning and laundry services at clear and competitive prices.',
   },
   {
     icon: '🚐',
@@ -30,12 +30,12 @@ const REASONS = [
   {
     icon: '⭐',
     title: 'Satisfaction Guaranteed',
-    body: "Not happy? We'll re-clean it for free. No questions asked.",
+    body: "If you are not satisfied with the cleaning, please contact us and we will work with you to put it right.",
   },
   {
     icon: '👨‍👩‍👧',
     title: 'Trusted by Homes & Businesses',
-    body: 'Hotels, Airbnbs, restaurants, salons and families across Leicestershire trust us.',
+    body: 'Serving households, hotels, Airbnb hosts, restaurants, salons and other businesses across Leicester and surrounding areas.',
   },
 ];
 

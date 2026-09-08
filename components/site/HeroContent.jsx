@@ -31,7 +31,7 @@ export default function HeroContent({ brand, home }) {
           quality={80}
         />
         <div className="hero__loved-badge">
-          TRUSTED BY CUSTOMERS ACROSS LEICESTER
+          PROFESSIONAL GARMENT CARE SINCE 2005
         </div>
       </div>
 

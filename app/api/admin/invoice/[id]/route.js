@@ -224,7 +224,7 @@ export async function GET(_request, { params }) {
   doc.setFontSize(7);
   doc.setFont('helvetica', 'normal');
   doc.text('Thank you for choosing SuperDryCleaners. We care for your clothes like they\'re our own.', pageWidth / 2, footerY + 6, { align: 'center' });
-  doc.text(`${brand.phone || '07889 693265'} · ${brand.email || 'info@superdrycleaners.co'} · ${brand.website || 'superdrycleaners.co'}`, pageWidth / 2, footerY + 10, { align: 'center' });
+  doc.text(`${brand.phone || '07849 533923'} · ${brand.email || 'superdrycleaners31@gmail.com'} · ${brand.website || 'superdrycleaners.co'}`, pageWidth / 2, footerY + 10, { align: 'center' });
 
   // Return PDF as download
   const pdfBuffer = Buffer.from(doc.output('arraybuffer'));

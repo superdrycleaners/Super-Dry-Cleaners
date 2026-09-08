@@ -20,28 +20,30 @@ const SiteFooter = ({ brand }) => {
         </div>
         <nav className="footer__col" aria-label="Services">
           <h4>Services</h4>
-          <a href="#services">Dry Cleaning</a>
-          <a href="#services">Wash, Dry &amp; Fold</a>
-          <a href="#services">Duvets &amp; Bedding</a>
-          <a href="#services">Ironing &amp; Pressing</a>
-          <a href="#services">Commercial Laundry</a>
-          <a href="#services">Wedding Dress</a>
+          <a href="/#services">Dry Cleaning</a>
+          <a href="/#services">Wash, Dry &amp; Fold</a>
+          <a href="/#services">Ironing &amp; Pressing</a>
+          <a href="/#services">Duvets &amp; Bedding</a>
+          <a href="/#services">Wedding Dress Cleaning</a>
+          <a href="/#services">Commercial Laundry</a>
+          <a href="/#services">Alterations &amp; Repairs</a>
         </nav>
         <div className="footer__col">
           <h4>Contact</h4>
-          <a href={`tel:${brand.phoneHref}`}>{brand.phone}</a>
-          <a href={`mailto:${brand.email}`}>{brand.email}</a>
-          <a href={`https://wa.me/${brand.whatsapp || '447889693265'}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          <p className="footer__addr">{brand.address}</p>
+          <a href={`tel:${brand.phoneHref || '+447849533923'}`}>{brand.phone || '07849 533923'}</a>
+          <a href={`mailto:${brand.email || 'superdrycleaners31@gmail.com'}`}>{brand.email || 'superdrycleaners31@gmail.com'}</a>
+          <a href={`https://wa.me/${brand.whatsapp || '447849533923'}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <p className="footer__addr">{brand.address || 'Unit 4, Pasture Lane, Leicester LE1 4EY'}</p>
         </div>
         <div className="footer__col">
           <h4>Opening Hours</h4>
-          <p className="footer__hours">Monday – Friday: 9:00am – 6:00pm</p>
-          <p className="footer__hours">Saturday – Sunday: Closed</p>
+          <p className="footer__hours">{brand.openingHours || 'Monday – Friday: 9:00am – 6:00pm'}</p>
+          <p className="footer__hours">{brand.closedDay || 'Saturday – Sunday: Closed'}</p>
           <h4 style={{ marginTop: '1.4rem' }}>Quick Links</h4>
-          <a href="#about">About Us</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#book">Book Collection</a>
+          <a href="/#about">About Us</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/contact">Contact Us</a>
+          <a href="/#book">Book Collection</a>
         </div>
       </div>
 
@@ -57,7 +59,7 @@ const SiteFooter = ({ brand }) => {
 
       <div className="container footer__base">
         <p>© {year} {brand.name}. {brand.copyright || 'All rights reserved.'}</p>
-        <p>{brand.tagline || 'Proudly serving Leicester & surrounding areas since 2005.'}</p>
+        <p>{brand.tagline || 'Professional dry cleaning and laundry services in Leicester since 2005.'}</p>
       </div>
     </footer>
   );

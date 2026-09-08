@@ -11,11 +11,11 @@ import PropTypes from 'prop-types';
 const TopBar = ({ brand = {} }) => (
   <div className="topbar">
     <div className="container topbar__inner">
-      <a href={`tel:${brand.phoneHref || '+447889693265'}`} className="topbar__item">
-        <span aria-hidden="true">📞</span> {brand.phone || '07889 693265'}
+      <a href={`tel:${brand.phoneHref || '+447849533923'}`} className="topbar__item">
+        <span aria-hidden="true">📞</span> {brand.phone || '07849 533923'}
       </a>
-      <a href={`mailto:${brand.email || 'info@superdrycleaners.co'}`} className="topbar__item">
-        <span aria-hidden="true">✉️</span> {brand.email || 'info@superdrycleaners.co'}
+      <a href={`mailto:${brand.email || 'superdrycleaners31@gmail.com'}`} className="topbar__item">
+        <span aria-hidden="true">✉️</span> {brand.email || 'superdrycleaners31@gmail.com'}
       </a>
       <span className="topbar__item topbar__hours">
         <span aria-hidden="true">🕐</span> {brand.openingHours || 'Mon–Fri: 9am – 6pm'}

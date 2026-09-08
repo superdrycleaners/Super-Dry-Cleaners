@@ -1,18 +1,18 @@
 {
   "brand": {
     "name": "SuperDryCleaners",
-    "email": "info@superdrycleaners.co",
-    "phone": "07889 693265",
-    "phoneHref": "+447889693265",
-    "phoneLandline": "0116 123 4567",
-    "whatsapp": "447889693265",
+    "email": "superdrycleaners31@gmail.com",
+    "phone": "07849 533923",
+    "phoneHref": "+447849533923",
+    "phoneLandline": "07849 533923",
+    "whatsapp": "447849533923",
     "website": "superdrycleaners.co",
-    "address": "Unit 4, Patel Lane, Leicester LE1 4EY",
-    "tagline": "Leicester's dry cleaning & laundry service since 2005.",
+    "address": "Unit 4, Pasture Lane, Leicester LE1 4EY",
+    "tagline": "Professional dry cleaning and laundry services in Leicester since 2005.",
     "footerText": "We care for your clothes like they're our own.",
     "copyright": "All rights reserved.",
-    "openingHours": "Monday – Friday, 9:00am – 6:00pm",
-    "closedDay": "Saturday - Sunday: Closed",
+    "openingHours": "Monday – Friday: 9:00am – 6:00pm",
+    "closedDay": "Saturday – Sunday: Closed",
     "freeDeliveryThreshold": "£25",
     "areasServed": "Leicester City Centre · Clarendon Park · Oadby · Knighton · Evington · Stoneygate · Highfields · Braunstone · Glenfield · Beaumont Leys · Belgrave · Wigston · and more"
   },
@@ -56,7 +56,7 @@
     { "num": "05", "slug": "curtains", "title": "Curtains & Household Items", "body": "We clean curtains with care and precision, plus tablecloths, towels and other household textiles.", "includes": "Careful measurement, deep cleaning, pressing and folding/hanging.", "suitableFor": "Curtains, blinds, rugs, tablecloths, large towels.", "turnaround": "5 - 7 days", "price": "From £30.00" },
     { "num": "06", "slug": "wedding-dress", "title": "Wedding Dress Cleaning", "body": "Specialist cleaning to keep your memories perfect. Preserved and boxed with care.", "includes": "Inspection, specialist delicate cleaning, minor repairs and preservation boxing.", "suitableFor": "Wedding dresses, bridesmaid dresses, formal gowns.", "turnaround": "2 - 4 weeks", "price": "From £95.00" },
     { "num": "07", "slug": "alterations", "title": "Alterations & Repairs", "body": "Expert alterations for the perfect fit. Hems, resizing and small repairs handled in-house.", "includes": "Pinning/measuring (if applicable), professional tailoring and finishing.", "suitableFor": "Trousers, dresses, suits, zip replacements, button repairs.", "turnaround": "3 - 7 days", "price": "From £10.00" },
-    { "num": "08", "slug": "commercial", "title": "Commercial Laundry", "body": "Hotels, restaurants, Airbnb, spas, salons and more. Reliable high-volume care billed by the kilo.", "includes": "High-temperature wash, automated ironing, flat-folding and regular collection.", "suitableFor": "Hotels, Airbnbs, restaurants, gyms, spas.", "turnaround": "Regular scheduled service", "price": "From £3.50 per kg" },
+    { "num": "08", "slug": "commercial", "title": "Commercial Laundry", "body": "Hotels, restaurants, Airbnb, spas, salons and more. Reliable commercial laundry services for businesses, with flexible pricing to suit your requirements.", "includes": "High-temperature wash, automated ironing, flat-folding and regular collection.", "suitableFor": "Hotels, Airbnbs, restaurants, gyms, spas.", "turnaround": "Regular scheduled service", "price": "From £3.50 per kg" },
     { "num": "09", "slug": "bag-shoe", "title": "Bag & Shoe Cleaning", "body": "Professional care for your bags and shoes. Restored and refreshed.", "includes": "Deep cleaning, leather conditioning, stain removal and deodorizing.", "suitableFor": "Trainers, leather shoes, suede, handbags, luxury items.", "turnaround": "7 - 10 days", "price": "From £25.00" }
   ],
   "catalogue": [

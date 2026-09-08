@@ -147,8 +147,7 @@ export default async function EcoPage() {
           </Reveal>
           <Reveal>
             <div className="eco-badge">
-              <span className="eco-badge__icon">🐑</span>
-              <span>Woolmark Approved since 2004</span>
+              <span>Gentle Care for Delicate Fabrics</span>
             </div>
           </Reveal>
         </div>

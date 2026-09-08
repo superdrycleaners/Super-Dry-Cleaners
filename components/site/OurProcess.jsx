@@ -48,8 +48,8 @@ export default function OurProcess() {
     },
     {
       id: 5,
-      title: "Flawless Finish",
-      desc: "Your clothes emerge beautifully clean with minimal creases, ready to wear.",
+      title: "Professional Finish",
+      desc: "Every garment is carefully finished and returned ready to wear.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -65,7 +65,7 @@ export default function OurProcess() {
           <p className="eyebrow">SuperDryCleaners</p>
           <h2 className="section__title">Our Cleaning Process</h2>
           <p className="section__intro">
-            Experience professional garment care. Our eco-friendly system delivers spotless results without harsh toxic solvents.
+            Experience professional garment care. Our modern cleaning process is designed to provide excellent cleaning results while being gentler on fabrics and the environment.
           </p>
         </Reveal>
 

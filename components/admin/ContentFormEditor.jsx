@@ -32,10 +32,10 @@ function BrandForm({ data, onChange }) {
   const fields = [
     { key: 'name', label: 'Business Name' },
     { key: 'email', label: 'Email Address' },
-    { key: 'phone', label: 'Phone (display)', placeholder: '07889 693265' },
-    { key: 'phoneHref', label: 'Phone (link format)', placeholder: '+447889693265' },
+    { key: 'phone', label: 'Phone (display)', placeholder: '07849 533923' },
+    { key: 'phoneHref', label: 'Phone (link format)', placeholder: '+447849533923' },
     { key: 'phoneLandline', label: 'Landline' },
-    { key: 'whatsapp', label: 'WhatsApp Number (no +)', placeholder: '447889693265' },
+    { key: 'whatsapp', label: 'WhatsApp Number (no +)', placeholder: '447849533923' },
     { key: 'website', label: 'Website' },
     { key: 'address', label: 'Address' },
     { key: 'tagline', label: 'Tagline / Slogan' },

@@ -5,13 +5,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
 
-/** Primary navigation links */
 const LINKS = [
   { href: '/#home', label: 'Home', sectionId: 'home' },
-  { href: '/eco', label: 'Eco', isPage: true },
   { href: '/#services', label: 'Services', sectionId: 'services' },
   { href: '/pricing', label: 'Pricing', sectionId: 'pricing' },
   { href: '/#about', label: 'About', sectionId: 'about' },
+  { href: '/contact', label: 'Contact', isPage: true },
 ];
 
 /**
