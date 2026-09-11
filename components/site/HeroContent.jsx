@@ -3,8 +3,12 @@
 import Image from 'next/image';
 import AnimatedText from '@/components/site/AnimatedText';
 import Reveal from '@/components/site/Reveal';
+import { useBrand } from '@/components/site/BrandContext';
 
-export default function HeroContent({ brand, home }) {
+export default function HeroContent({ brand: propBrand, home }) {
+  const contextBrand = useBrand();
+  const brand = { ...contextBrand, ...propBrand };
+
   const renderTitle = (title) => {
     if (!title) return null;
     const words = title.split(' ');
@@ -59,7 +63,7 @@ export default function HeroContent({ brand, home }) {
             <a href="/pricing" className="btn btn--ghost">
               {home.ctaPricing || 'View Pricing'}
             </a>
-            <a href={`https://wa.me/${brand?.whatsapp || '447889693265'}`} className="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
+            <a href={`https://wa.me/${brand.whatsapp}`} className="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
               CALL US / WHATSAPP US
             </a>
           </Reveal>

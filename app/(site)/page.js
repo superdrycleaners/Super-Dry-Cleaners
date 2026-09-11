@@ -116,7 +116,7 @@ export default async function HomePage() {
       </section>
 
       {/* Testimonial */}
-      <Testimonial testimonials={testimonials || []} />
+      {/* <Testimonial testimonials={testimonials || []} /> */}
 
       {/* Areas Served */}
       <AreasServed />

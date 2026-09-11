@@ -109,7 +109,7 @@ const COMPARE_ROWS = [
  */
 export default async function EcoPage() {
   const brand = await getContentSection('brand');
-  const whatsapp = brand?.whatsapp || '447889693265';
+  const whatsapp = brand?.whatsapp;
 
   return (
     <>

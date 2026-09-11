@@ -1,12 +1,17 @@
+'use client';
+
 import PropTypes from 'prop-types';
+import { useBrand } from '@/components/site/BrandContext';
 
 /**
  * Public site footer with brand, services, contact, hours, and areas served.
  *
  * @param {object} props
- * @param {object} props.brand - Brand contact info from CMS content.
+ * @param {object} [props.brand] - Brand contact info from CMS content.
  */
-const SiteFooter = ({ brand }) => {
+const SiteFooter = ({ brand: propBrand }) => {
+  const contextBrand = useBrand();
+  const brand = { ...contextBrand, ...propBrand };
   const year = new Date().getFullYear();
 
   return (
@@ -14,8 +19,8 @@ const SiteFooter = ({ brand }) => {
       <div className="container footer__inner">
         <div className="footer__brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/Frame 32.svg" alt="SuperDryCleaners" className="footer__brand-logo" width="180" height="108" />
-          <h3 style={{ fontSize: '1.2rem', marginTop: '1rem', marginBottom: '0.5rem', color: 'var(--ink)' }}>SuperDryCleaners</h3>
+          <img src="/Frame 32.svg" alt={brand.name || 'SuperDryCleaners'} className="footer__brand-logo" width="180" height="108" />
+          <h3 style={{ fontSize: '1.2rem', marginTop: '1rem', marginBottom: '0.5rem', color: 'var(--ink)' }}>{brand.name}</h3>
           <p>Professional Dry Cleaning &amp; Laundry Services in Leicester</p>
         </div>
         <nav className="footer__col" aria-label="Services">
@@ -30,15 +35,23 @@ const SiteFooter = ({ brand }) => {
         </nav>
         <div className="footer__col">
           <h4>Contact</h4>
-          <a href={`tel:${brand.phoneHref || '+447849533923'}`}>{brand.phone || '07849 533923'}</a>
-          <a href={`mailto:${brand.email || 'superdrycleaners31@gmail.com'}`}>{brand.email || 'superdrycleaners31@gmail.com'}</a>
-          <a href={`https://wa.me/${brand.whatsapp || '447849533923'}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          <p className="footer__addr">{brand.address || 'Unit 4, Pasture Lane, Leicester LE1 4EY'}</p>
+          {brand.phone && (
+            <a href={`tel:${brand.phoneHref || brand.phone}`}>{brand.phone}</a>
+          )}
+          {brand.email && (
+            <a href={`mailto:${brand.email}`}>{brand.email}</a>
+          )}
+          {brand.whatsapp && (
+            <a href={`https://wa.me/${brand.whatsapp}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          )}
+          {brand.address && (
+            <p className="footer__addr">{brand.address}</p>
+          )}
         </div>
         <div className="footer__col">
           <h4>Opening Hours</h4>
-          <p className="footer__hours">{brand.openingHours || 'Monday – Friday: 9:00am – 6:00pm'}</p>
-          <p className="footer__hours">{brand.closedDay || 'Saturday – Sunday: Closed'}</p>
+          {brand.openingHours && <p className="footer__hours">{brand.openingHours}</p>}
+          {brand.closedDay && <p className="footer__hours">{brand.closedDay}</p>}
           <h4 style={{ marginTop: '1.4rem' }}>Quick Links</h4>
           <a href="/#about">About Us</a>
           <a href="/pricing">Pricing</a>
@@ -48,38 +61,25 @@ const SiteFooter = ({ brand }) => {
       </div>
 
       {/* Areas we serve strip */}
-      <div className="footer__areas">
-        <div className="container">
-          <p className="footer__areas-label">Areas we serve:</p>
-          <p className="footer__areas-list">
-            {brand.areasServed || 'Leicester City Centre · Clarendon Park · Oadby · Knighton · Evington · Stoneygate · Highfields · Braunstone · Glenfield · Beaumont Leys · Belgrave · Wigston · and more'}
-          </p>
+      {brand.areasServed && (
+        <div className="footer__areas">
+          <div className="container">
+            <p className="footer__areas-label">Areas we serve:</p>
+            <p className="footer__areas-list">{brand.areasServed}</p>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="container footer__base">
-        <p>© {year} {brand.name}. {brand.copyright || 'All rights reserved.'}</p>
-        <p>{brand.tagline || 'Professional dry cleaning and laundry services in Leicester since 2005.'}</p>
+        <p>© {year} {brand.name}. {brand.copyright}</p>
+        <p>{brand.tagline}</p>
       </div>
     </footer>
   );
 };
 
 SiteFooter.propTypes = {
-  brand: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
-    phoneHref: PropTypes.string.isRequired,
-    phoneLandline: PropTypes.string,
-    whatsapp: PropTypes.string,
-    address: PropTypes.string.isRequired,
-    tagline: PropTypes.string,
-    copyright: PropTypes.string,
-    openingHours: PropTypes.string,
-    closedDay: PropTypes.string,
-    areasServed: PropTypes.string,
-  }).isRequired,
+  brand: PropTypes.object,
 };
 
 export default SiteFooter;

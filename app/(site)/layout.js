@@ -3,6 +3,7 @@ import TopBar from '@/components/site/TopBar';
 import SiteFooter from '@/components/site/SiteFooter';
 import ScrollToTop from '@/components/site/ScrollToTop';
 import { getContentSection } from '@/lib/data/content';
+import { BrandProvider } from '@/components/site/BrandContext';
 
 /**
  * Layout for the public marketing site: top bar, shared nav and footer.
@@ -15,12 +16,12 @@ export default async function SiteLayout({ children }) {
   const brand = await getContentSection('brand');
 
   return (
-    <>
+    <BrandProvider value={brand}>
       <TopBar brand={brand} />
-      <SiteNav whatsapp={brand.whatsapp} />
+      <SiteNav whatsapp={brand?.whatsapp} />
       <main>{children}</main>
       <SiteFooter brand={brand} />
       <ScrollToTop />
-    </>
+    </BrandProvider>
   );
 }

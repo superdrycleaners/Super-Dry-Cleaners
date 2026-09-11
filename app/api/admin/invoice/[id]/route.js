@@ -45,7 +45,7 @@ export async function GET(_request, { params }) {
   doc.setTextColor(...WHITE);
   doc.setFontSize(20);
   doc.setFont('helvetica', 'bold');
-  doc.text('SuperDryCleaners', margin, 18);
+  doc.text(brand.name || 'SuperDryCleaners', margin, 18);
 
   // Tagline
   doc.setFontSize(8);
@@ -223,7 +223,7 @@ export async function GET(_request, { params }) {
   doc.setTextColor(...SOFT_TEXT);
   doc.setFontSize(7);
   doc.setFont('helvetica', 'normal');
-  doc.text('Thank you for choosing SuperDryCleaners. We care for your clothes like they\'re our own.', pageWidth / 2, footerY + 6, { align: 'center' });
+  doc.text(`Thank you for choosing ${brand.name || 'SuperDryCleaners'}. ${brand.footerText || "We care for your clothes like they're our own."}`, pageWidth / 2, footerY + 6, { align: 'center' });
   doc.text(`${brand.phone || '07849 533923'} · ${brand.email || 'superdrycleaners31@gmail.com'} · ${brand.website || 'superdrycleaners.co'}`, pageWidth / 2, footerY + 10, { align: 'center' });
 
   // Return PDF as download

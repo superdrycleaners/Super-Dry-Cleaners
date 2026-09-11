@@ -1,10 +1,14 @@
 import { getContent } from '@/lib/data/content';
 import Reveal from '@/components/site/Reveal';
 
-export const metadata = {
-  title: 'Contact Us | Super Dry Cleaners Leicester',
-  description: 'Get in touch with Super Dry Cleaners in Leicester. Unit 4, Pasture Lane, LE1 4EY. Call 07849 533923 or email superdrycleaners31@gmail.com.',
-};
+export async function generateMetadata() {
+  const content = await getContent();
+  const { brand = {} } = content;
+  return {
+    title: `Contact Us | ${brand.name || 'SuperDryCleaners Leicester'}`,
+    description: `Get in touch with ${brand.name || 'SuperDryCleaners'} in Leicester. ${brand.address || ''}. Call ${brand.phone || ''} or email ${brand.email || ''}.`,
+  };
+}
 
 export default async function ContactPage() {
   const content = await getContent();
@@ -19,15 +23,14 @@ export default async function ContactPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'DryCleaner',
-    name: brand.name || 'Super Dry Cleaners',
+    name: brand.name || 'SuperDryCleaners',
     image: 'https://superdrycleaners.co.uk/hero-image-sd.jpeg',
     telephone: phoneDisplay,
     email: emailDisplay,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Unit 4, Pasture Lane',
+      streetAddress: addressDisplay,
       addressLocality: 'Leicester',
-      postalCode: 'LE1 4EY',
       addressCountry: 'GB',
     },
     openingHoursSpecification: [
@@ -40,6 +43,10 @@ export default async function ContactPage() {
     ],
   };
 
+  // Helper to split opening hours and closed day for tabular rendering if needed
+  const openingHoursText = brand.openingHours || 'Monday – Friday: 9:00am – 6:00pm';
+  const closedDayText = brand.closedDay || 'Saturday – Sunday: Closed';
+
   return (
     <>
       <script
@@ -51,7 +58,7 @@ export default async function ContactPage() {
           <div className="container">
             <Reveal as="header" className="section__head section__head--center" style={{ marginBottom: '3.5rem' }}>
               <p className="eyebrow">Get in touch</p>
-              <h1 className="section__title">Contact Super Dry Cleaners</h1>
+              <h1 className="section__title">Contact {brand.name || 'SuperDryCleaners'}</h1>
               <p className="section__intro">
                 Have a question about our services or need help with a collection? We are here to help.
               </p>
@@ -72,14 +79,17 @@ export default async function ContactPage() {
                   Our Location
                 </h2>
                 <address style={{ fontStyle: 'normal', lineHeight: '1.6', color: 'var(--ink-soft)' }}>
-                  <strong>Super Dry Cleaners</strong><br />
-                  Unit 4, Pasture Lane<br />
-                  Leicester<br />
-                  LE1 4EY
+                  <strong>{brand.name || 'SuperDryCleaners'}</strong><br />
+                  {addressDisplay.split(',').map((line, idx) => (
+                    <span key={idx}>
+                      {line.trim()}
+                      <br />
+                    </span>
+                  ))}
                 </address>
                 <div style={{ marginTop: '1.5rem' }}>
                   <a
-                    href="https://maps.google.com/?q=Unit+4+Pasture+Lane+Leicester+LE1+4EY"
+                    href={`https://maps.google.com/?q=${encodeURIComponent(addressDisplay)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: 'var(--teal)', fontWeight: '600', textDecoration: 'underline', textUnderlineOffset: '4px' }}
@@ -134,18 +144,14 @@ export default async function ContactPage() {
                 <h2 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--ink)' }}>
                   Opening Hours
                 </h2>
-                <table style={{ width: '100%', borderCollapse: 'collapse', color: 'var(--ink-soft)', lineHeight: '1.8' }}>
-                  <tbody>
-                    <tr style={{ borderBottom: '1px solid var(--border-light)' }}>
-                      <td style={{ padding: '0.5rem 0', fontWeight: '600', color: 'var(--ink)' }}>Monday – Friday</td>
-                      <td style={{ padding: '0.5rem 0', textAlign: 'right' }}>9:00am – 6:00pm</td>
-                    </tr>
-                    <tr>
-                      <td style={{ padding: '0.5rem 0', fontWeight: '600', color: 'var(--ink)' }}>Saturday – Sunday</td>
-                      <td style={{ padding: '0.5rem 0', textAlign: 'right', color: '#c53030', fontWeight: '600' }}>Closed</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div style={{ color: 'var(--ink-soft)', lineHeight: '1.8' }}>
+                  <div style={{ padding: '0.5rem 0', borderBottom: '1px solid var(--border-light)', fontWeight: '600', color: 'var(--ink)' }}>
+                    {openingHoursText}
+                  </div>
+                  <div style={{ padding: '0.5rem 0', color: '#c53030', fontWeight: '600' }}>
+                    {closedDayText}
+                  </div>
+                </div>
               </Reveal>
             </div>
           </div>

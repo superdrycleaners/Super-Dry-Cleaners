@@ -17,7 +17,7 @@ const SITE_SECTIONS = [
   { key: 'services', title: 'Our Services', description: 'Service cards shown in the services section.' },
   { key: 'catalogue', title: 'Pricing & Offers', description: 'All pricing tables and special offers.' },
   { key: 'about', title: 'About Us', description: 'The story, promises, and features in the dark section.' },
-  { key: 'testimonials', title: 'Customer Testimonials', description: 'Rotating customer quotes displayed in the carousel before the booking form.' },
+  // { key: 'testimonials', title: 'Customer Testimonials', description: 'Rotating customer quotes displayed in the carousel before the booking form.' },
 ];
 
 /**

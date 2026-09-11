@@ -1,6 +1,11 @@
+'use client';
+
 import Reveal from '@/components/site/Reveal';
+import { useBrand } from '@/components/site/BrandContext';
 
 export default function OurProcess() {
+  const brand = useBrand();
+
   const steps = [
     {
       id: 1,
@@ -27,7 +32,7 @@ export default function OurProcess() {
     {
       id: 3,
       title: "Gentle Water Wash",
-      desc: "Our PERC-free system uses ProV'tex technology to give your clothes a highly effective, gentle",
+      desc: "Our PERC-free system uses ProV'tex technology to give your clothes a highly effective, gentle wash",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M2 12h4l2-2 4 4 4-4 2 2h4"></path>
@@ -62,7 +67,7 @@ export default function OurProcess() {
     <section className="section" id="eco-process" style={{ background: 'var(--mist)' }}>
       <div className="container">
         <Reveal as="header" className="section__head section__head--center">
-          <p className="eyebrow">SuperDryCleaners</p>
+          <p className="eyebrow">{brand.name || 'SuperDryCleaners'}</p>
           <h2 className="section__title">Our Cleaning Process</h2>
           <p className="section__intro">
             Experience professional garment care. Our modern cleaning process is designed to provide excellent cleaning results while being gentler on fabrics and the environment.
