@@ -3,7 +3,7 @@ import Reveal from '@/components/site/Reveal';
 import Catalogue from '@/components/site/Catalogue';
 
 export const metadata = {
-  title: 'Pricing & Catalogue | SuperDryCleaners',
+  title: 'SuperDryCleaners — Pricing & Catalogue Leicester',
   description: 'Transparent, itemised pricing for all our dry cleaning and laundry services in Leicester.',
 };
 

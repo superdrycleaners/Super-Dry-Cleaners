@@ -17,10 +17,10 @@ export async function generateMetadata({ params }) {
   if (!service) return { title: 'Service Not Found' };
 
   return {
-    title: `${service.title} Services in Leicester | SuperDryCleaners`,
+    title: `SuperDryCleaners — ${service.title} Services Leicester`,
     description: service.body,
     openGraph: {
-      title: `${service.title} Services in Leicester | SuperDryCleaners`,
+      title: `SuperDryCleaners — ${service.title} Services Leicester`,
       description: service.body,
       url: `https://superdrycleaners.co.uk/services/${service.slug}`,
       siteName: 'SuperDryCleaners',

@@ -4,9 +4,10 @@ import Reveal from '@/components/site/Reveal';
 export async function generateMetadata() {
   const content = await getContent();
   const { brand = {} } = content;
+  const brandName = brand.name || 'SuperDryCleaners';
   return {
-    title: `Contact Us | ${brand.name || 'SuperDryCleaners Leicester'}`,
-    description: `Get in touch with ${brand.name || 'SuperDryCleaners'} in Leicester. ${brand.address || ''}. Call ${brand.phone || ''} or email ${brand.email || ''}.`,
+    title: `${brandName} — Contact Us Leicester`,
+    description: `Get in touch with ${brandName} in Leicester. ${brand.address || ''}. Call ${brand.phone || ''} or email ${brand.email || ''}.`,
   };
 }
 

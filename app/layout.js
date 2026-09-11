@@ -21,11 +21,11 @@ const manrope = Manrope({
  * Applies to every route, including the admin area.
  */
 export const metadata = {
-  title: 'Dry Cleaning & Laundry Services Leicester | SuperDryCleaners',
+  title: 'SuperDryCleaners: Professional Dry Cleaning & Laundry Services Leicester',
   description:
     'Professional dry cleaning, laundry, ironing and specialist cleaning services in Leicester. Convenient collection and delivery for homes and businesses.',
   openGraph: {
-    title: 'Dry Cleaning & Laundry Services Leicester | SuperDryCleaners',
+    title: 'SuperDryCleaners: Professional Dry Cleaning & Laundry Services Leicester',
     description: 'Professional dry cleaning, laundry, ironing and specialist cleaning services in Leicester. Convenient collection and delivery for homes and businesses.',
     url: 'https://superdrycleaners.co.uk',
     siteName: 'SuperDryCleaners',
@@ -50,39 +50,59 @@ export const metadata = {
  * @param {import('react').ReactNode} props.children - Route content.
  */
 export default function RootLayout({ children }) {
+  const jsonLdGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://superdrycleaners.co.uk/#website',
+        url: 'https://superdrycleaners.co.uk',
+        name: 'SuperDryCleaners',
+        alternateName: ['SuperDryCleaners Leicester', 'SuperDryCleaners UK'],
+        publisher: {
+          '@id': 'https://superdrycleaners.co.uk/#organization',
+        },
+      },
+      {
+        '@type': 'DryCleaningOrLaundry',
+        '@id': 'https://superdrycleaners.co.uk/#organization',
+        name: 'SuperDryCleaners',
+        legalName: 'SuperDryCleaners',
+        url: 'https://superdrycleaners.co.uk',
+        image: 'https://superdrycleaners.co.uk/hero-image-sd.jpeg',
+        telephone: '+447849533923',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Unit 4, Pasture Lane',
+          addressLocality: 'Leicester',
+          postalCode: 'LE1 4EY',
+          addressCountry: 'GB',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 52.6369,
+          longitude: -1.1398,
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '09:00',
+            closes: '18:00',
+          },
+        ],
+        priceRange: '££',
+      },
+    ],
+  };
+
   return (
     <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "DryCleaningOrLaundry",
-              name: "SuperDryCleaners",
-              image: "https://superdrycleaners.co.uk/hero-image-sd.jpeg",
-              "@id": "https://superdrycleaners.co.uk",
-              url: "https://superdrycleaners.co.uk",
-              telephone: "+447889693265",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Leicester City Centre",
-                addressLocality: "Leicester",
-                addressCountry: "UK"
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 52.6369,
-                longitude: -1.1398
-              },
-              openingHoursSpecification: {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                opens: "09:00",
-                closes: "18:00"
-              },
-              priceRange: "££"
-            })
+            __html: JSON.stringify(jsonLdGraph),
           }}
         />
       </head>
