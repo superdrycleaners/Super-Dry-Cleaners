@@ -3,16 +3,18 @@ import { getContent } from '@/lib/data/content';
 import Reveal from '@/components/site/Reveal';
 import Link from 'next/link';
 
-// Generate static params for all services in site-content.json
+// Generate static params for all services from CMS
 export async function generateStaticParams() {
   const content = await getContent();
-  return content.services.map((s) => ({ slug: s.slug }));
+  const services = Array.isArray(content?.services) ? content.services : [];
+  return services.filter((s) => Boolean(s.slug)).map((s) => ({ slug: s.slug }));
 }
 
 // Dynamic metadata
 export async function generateMetadata({ params }) {
   const content = await getContent();
-  const service = content.services.find((s) => s.slug === params.slug);
+  const services = Array.isArray(content?.services) ? content.services : [];
+  const service = services.find((s) => s.slug === params.slug);
 
   if (!service) return { title: 'Service Not Found' };
 
@@ -40,7 +42,8 @@ export async function generateMetadata({ params }) {
 
 export default async function ServicePage({ params }) {
   const content = await getContent();
-  const service = content.services.find((s) => s.slug === params.slug);
+  const services = Array.isArray(content?.services) ? content.services : [];
+  const service = services.find((s) => s.slug === params.slug);
 
   if (!service) {
     notFound();

@@ -174,15 +174,44 @@ function StepsForm({ data, onChange }) {
 StepsForm.propTypes = { data: PropTypes.array.isRequired, onChange: PropTypes.func.isRequired };
 
 /**
- * Services section: list of service cards.
+ * Helper to slugify a service title.
+ */
+function slugify(text) {
+  return (text || '')
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+/**
+ * Services section: list of service cards with full metadata.
  */
 function ServicesForm({ data, onChange }) {
   const update = (idx, key, val) => {
     const next = [...data];
-    next[idx] = { ...next[idx], [key]: val };
+    const item = { ...next[idx], [key]: val };
+    if (key === 'title' && (!item.slug || item.slug === slugify(next[idx].title))) {
+      item.slug = slugify(val);
+    }
+    next[idx] = item;
     onChange(next);
   };
-  const add = () => onChange([...data, { num: String(data.length + 1).padStart(2, '0'), title: '', body: '' }]);
+  const add = () =>
+    onChange([
+      ...data,
+      {
+        num: String(data.length + 1).padStart(2, '0'),
+        slug: '',
+        title: '',
+        body: '',
+        includes: '',
+        suitableFor: '',
+        turnaround: '',
+        price: '',
+      },
+    ]);
   const remove = (idx) => onChange(data.filter((_, i) => i !== idx));
 
   return (
@@ -193,18 +222,40 @@ function ServicesForm({ data, onChange }) {
           <div className="cms-form__row">
             <div className="admin-ui__field" style={{ maxWidth: '5rem' }}>
               <label className="admin-ui__field-label" htmlFor={`svc-num-${idx}`}>#</label>
-              <Input id={`svc-num-${idx}`} value={svc.num} onChange={(e) => update(idx, 'num', e.target.value)} />
+              <Input id={`svc-num-${idx}`} value={svc.num || ''} onChange={(e) => update(idx, 'num', e.target.value)} />
             </div>
             <div className="admin-ui__field" style={{ flex: 1 }}>
               <label className="admin-ui__field-label" htmlFor={`svc-title-${idx}`}>Title</label>
-              <Input id={`svc-title-${idx}`} value={svc.title} onChange={(e) => update(idx, 'title', e.target.value)} />
+              <Input id={`svc-title-${idx}`} value={svc.title || ''} onChange={(e) => update(idx, 'title', e.target.value)} />
+            </div>
+            <div className="admin-ui__field" style={{ flex: 1 }}>
+              <label className="admin-ui__field-label" htmlFor={`svc-slug-${idx}`}>URL Slug</label>
+              <Input id={`svc-slug-${idx}`} value={svc.slug || ''} placeholder="e.g. dry-cleaning" onChange={(e) => update(idx, 'slug', e.target.value)} />
+            </div>
+          </div>
+          <div className="cms-form__row">
+            <div className="admin-ui__field" style={{ flex: 1 }}>
+              <label className="admin-ui__field-label" htmlFor={`svc-price-${idx}`}>Starting Price</label>
+              <Input id={`svc-price-${idx}`} value={svc.price || ''} placeholder="e.g. From £5.00" onChange={(e) => update(idx, 'price', e.target.value)} />
+            </div>
+            <div className="admin-ui__field" style={{ flex: 1 }}>
+              <label className="admin-ui__field-label" htmlFor={`svc-turnaround-${idx}`}>Turnaround Time</label>
+              <Input id={`svc-turnaround-${idx}`} value={svc.turnaround || ''} placeholder="e.g. 24 - 48 hours" onChange={(e) => update(idx, 'turnaround', e.target.value)} />
             </div>
           </div>
           <div className="admin-ui__field">
-            <label className="admin-ui__field-label" htmlFor={`svc-body-${idx}`}>Description</label>
-            <Textarea id={`svc-body-${idx}`} value={svc.body} rows={2} onChange={(e) => update(idx, 'body', e.target.value)} />
+            <label className="admin-ui__field-label" htmlFor={`svc-body-${idx}`}>Card Description (Homepage)</label>
+            <Textarea id={`svc-body-${idx}`} value={svc.body || ''} rows={2} onChange={(e) => update(idx, 'body', e.target.value)} />
           </div>
-          <Button type="button" variant="danger" size="sm" onClick={() => remove(idx)}>Remove</Button>
+          <div className="admin-ui__field">
+            <label className="admin-ui__field-label" htmlFor={`svc-includes-${idx}`}>What is Included (Service Page)</label>
+            <Textarea id={`svc-includes-${idx}`} value={svc.includes || ''} rows={2} onChange={(e) => update(idx, 'includes', e.target.value)} />
+          </div>
+          <div className="admin-ui__field">
+            <label className="admin-ui__field-label" htmlFor={`svc-suitableFor-${idx}`}>Suitable For (Service Page)</label>
+            <Input id={`svc-suitableFor-${idx}`} value={svc.suitableFor || ''} placeholder="e.g. Suits, silk, wool, coats" onChange={(e) => update(idx, 'suitableFor', e.target.value)} />
+          </div>
+          <Button type="button" variant="danger" size="sm" onClick={() => remove(idx)}>Remove service</Button>
         </fieldset>
       ))}
       <Button type="button" variant="ghost" size="sm" onClick={add}>+ Add service</Button>

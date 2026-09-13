@@ -12,13 +12,14 @@ import Reveal from './Reveal';
  * @param {Array<{num: string, title: string, body: string}>} props.services
  * @param {number} [props.limit]
  */
-const ServiceCards = ({ services, limit }) => {
-  const list = typeof limit === 'number' ? services.slice(0, limit) : services;
+const ServiceCards = ({ services = [], limit }) => {
+  const safeServices = Array.isArray(services) ? services : [];
+  const list = typeof limit === 'number' ? safeServices.slice(0, limit) : safeServices;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid var(--line)' }}>
       {list.map((service) => (
-        <Link href={`/services/${service.slug}`} key={service.title} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link href={service.slug ? `/services/${service.slug}` : '/#services'} key={service.title || service.num} style={{ textDecoration: 'none', color: 'inherit' }}>
           <Reveal 
             as="article"
           style={{
