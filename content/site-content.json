@@ -69,6 +69,43 @@
       "body": "Your freshly cleaned and finished items are returned to your door."
     }
   ],
+  "cleaningProcess": {
+    "eyebrow": "SUPER DRY CLEANERS",
+    "title": "Our Cleaning Process",
+    "intro": "Experience professional garment care. Our modern cleaning process is designed to provide excellent cleaning results while being gentler on fabrics and the environment.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Expert Inspection",
+        "desc": "We carefully inspect every garment to identify specific fabric needs and areas requiring special attention.",
+        "icon": "search"
+      },
+      {
+        "id": 2,
+        "title": "Eco Pre-Spotting",
+        "desc": "Advanced, eco-friendly agents are used to expertly treat stubborn stains like grease or ink before washing.",
+        "icon": "droplet"
+      },
+      {
+        "id": 3,
+        "title": "Gentle Water Wash",
+        "desc": "Our PERC-free system uses ProV'tex technology to give your clothes a highly effective, gentle wash",
+        "icon": "waves"
+      },
+      {
+        "id": 4,
+        "title": "Smart Drying",
+        "desc": "Garments dry fully inside the machine - helping protect the fabric and maintain its finish, eliminating hang-dry time.",
+        "icon": "wind"
+      },
+      {
+        "id": 5,
+        "title": "Professional Finish",
+        "desc": "Every garment is carefully finished and returned ready to wear.",
+        "icon": "star"
+      }
+    ]
+  },
   "services": [
     {
       "num": "01",
@@ -305,7 +342,7 @@
         "title": "Eco-friendly products"
       },
       {
-        "body": "If you're not happy, we'll re-clean it. No questions asked.",
+        "body": "If you are not satisfied with the cleaning, we will work with you to put it right.",
         "title": "Satisfaction guaranteed"
       },
       {

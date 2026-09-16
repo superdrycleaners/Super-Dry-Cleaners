@@ -13,7 +13,8 @@ import ContentFormEditor from '@/components/admin/ContentFormEditor';
 const SITE_SECTIONS = [
   { key: 'brand', title: 'Brand & Contact', description: 'Navigation bar, footer, and business details.' },
   { key: 'home', title: 'Hero Section', description: 'The main headline, intro text, and stats visitors see first.' },
-  { key: 'steps', title: 'How It Works', description: 'The 4-step process cards below the hero.' },
+  { key: 'steps', title: 'How It Works', description: 'The 4-step collection & delivery process cards below the hero.' },
+  { key: 'cleaningProcess', title: 'Our Cleaning Process', description: 'The eco-friendly garment cleaning process cards.' },
   { key: 'services', title: 'Our Services', description: 'Service cards shown in the services section.' },
   { key: 'catalogue', title: 'Pricing & Offers', description: 'All pricing tables and special offers.' },
   { key: 'about', title: 'About Us', description: 'The story, promises, and features in the dark section.' },

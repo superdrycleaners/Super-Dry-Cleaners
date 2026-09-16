@@ -412,12 +412,120 @@ function TestimonialForm({ data, onChange }) {
 
 TestimonialForm.propTypes = { data: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired, onChange: PropTypes.func.isRequired };
 
+/**
+ * CleaningProcess section: heading text + steps list.
+ */
+function CleaningProcessForm({ data = {}, onChange }) {
+  const processData = typeof data === 'object' && data !== null ? data : {};
+  const steps = Array.isArray(processData.steps) ? processData.steps : [];
+
+  const updateField = (key, val) => onChange({ ...processData, [key]: val });
+
+  const updateStep = (idx, key, val) => {
+    const nextSteps = [...steps];
+    nextSteps[idx] = { ...nextSteps[idx], [key]: val };
+    onChange({ ...processData, steps: nextSteps });
+  };
+
+  const addStep = () =>
+    onChange({
+      ...processData,
+      steps: [
+        ...steps,
+        { id: steps.length + 1, title: '', desc: '', icon: 'search' },
+      ],
+    });
+
+  const removeStep = (idx) =>
+    onChange({ ...processData, steps: steps.filter((_, i) => i !== idx) });
+
+  return (
+    <div className="cms-form__stack">
+      <div className="admin-ui__field">
+        <label className="admin-ui__field-label">Section Eyebrow</label>
+        <Input
+          value={processData.eyebrow || ''}
+          placeholder="SUPER DRY CLEANERS"
+          onChange={(e) => updateField('eyebrow', e.target.value)}
+        />
+      </div>
+      <div className="admin-ui__field">
+        <label className="admin-ui__field-label">Section Title</label>
+        <Input
+          value={processData.title || ''}
+          placeholder="Our Cleaning Process"
+          onChange={(e) => updateField('title', e.target.value)}
+        />
+      </div>
+      <div className="admin-ui__field">
+        <label className="admin-ui__field-label">Section Intro</label>
+        <Textarea
+          value={processData.intro || ''}
+          rows={2}
+          onChange={(e) => updateField('intro', e.target.value)}
+        />
+      </div>
+
+      <fieldset className="cms-form__fieldset">
+        <legend className="admin-ui__field-label">Process Steps</legend>
+        {steps.map((step, idx) => (
+          <fieldset key={idx} className="cms-form__fieldset" style={{ padding: '1rem' }}>
+            <legend className="admin-ui__field-label">Step 0{idx + 1} — {step.title || 'New Step'}</legend>
+            <div className="cms-form__row">
+              <div className="admin-ui__field" style={{ flex: 1 }}>
+                <label className="admin-ui__field-label">Step Title</label>
+                <Input
+                  value={step.title || ''}
+                  placeholder="e.g. Expert Inspection"
+                  onChange={(e) => updateStep(idx, 'title', e.target.value)}
+                />
+              </div>
+              <div className="admin-ui__field" style={{ maxWidth: '12rem' }}>
+                <label className="admin-ui__field-label">Icon Type</label>
+                <select
+                  className="admin-ui__input"
+                  style={{ width: '100%', height: '38px', borderRadius: '8px', padding: '0 0.5rem', border: '1px solid var(--line)', background: 'var(--paper)', color: 'var(--ink)' }}
+                  value={step.icon || 'search'}
+                  onChange={(e) => updateStep(idx, 'icon', e.target.value)}
+                >
+                  <option value="search">Magnifier (Inspection)</option>
+                  <option value="droplet">Droplet (Eco Pre-Spotting)</option>
+                  <option value="waves">Waves (Water Wash)</option>
+                  <option value="wind">Wind (Smart Drying)</option>
+                  <option value="star">Star (Professional Finish)</option>
+                </select>
+              </div>
+            </div>
+            <div className="admin-ui__field">
+              <label className="admin-ui__field-label">Step Description</label>
+              <Textarea
+                value={step.desc || ''}
+                rows={2}
+                onChange={(e) => updateStep(idx, 'desc', e.target.value)}
+              />
+            </div>
+            <Button type="button" variant="danger" size="sm" onClick={() => removeStep(idx)}>
+              Remove step
+            </Button>
+          </fieldset>
+        ))}
+        <Button type="button" variant="ghost" size="sm" onClick={addStep}>
+          + Add process step
+        </Button>
+      </fieldset>
+    </div>
+  );
+}
+
+CleaningProcessForm.propTypes = { data: PropTypes.object.isRequired, onChange: PropTypes.func.isRequired };
+
 /* ─── Form registry ───────────────────────────────────────────────────── */
 
 const FORM_REGISTRY = {
   brand: BrandForm,
   home: HomeForm,
   steps: StepsForm,
+  cleaningProcess: CleaningProcessForm,
   services: ServicesForm,
   catalogue: CatalogueForm,
   about: AboutForm,

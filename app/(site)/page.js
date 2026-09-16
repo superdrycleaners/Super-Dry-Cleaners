@@ -22,7 +22,7 @@ const BookingForm = dynamic(() => import('@/components/site/BookingForm'), { ssr
  */
 export default async function HomePage() {
   const content = await getContent();
-  const { home, steps, services, catalogue, about, testimonials } = content;
+  const { home, steps, services, catalogue, about, testimonials, cleaningProcess } = content;
   const brand = await getContentSection('brand');
 
   // Extract offers from the catalogue groups
@@ -56,7 +56,7 @@ export default async function HomePage() {
       </section>
 
       {/* Our Eco-Friendly Process */}
-      <OurProcess />
+      <OurProcess data={cleaningProcess} />
 
       {/* Services */}
       <section className="section" id="services">
